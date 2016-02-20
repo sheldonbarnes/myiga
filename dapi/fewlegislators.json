@@ -1,0 +1,26 @@
+[
+    {
+      "position_title": "Senator",
+      "firstName": "Ron",
+      "lastName": "Alting",
+      "party": "Republican",
+      "link": "/2016/legislators/ron_alting_538",
+      "fullName": "Senator Ron Alting"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "Lloyd",
+      "lastName": "Arnold",
+      "party": "Republican",
+      "link": "/2016/legislators/lloyd_arnold_1124",
+      "fullName": "Representative Lloyd Arnold"
+    },
+    {
+      "position_title": "Senator",
+      "firstName": "James",
+      "lastName": "Arnold",
+      "party": "Democratic",
+      "link": "/2016/legislators/james_arnold_917",
+      "fullName": "Senator James Arnold"
+    }
+]

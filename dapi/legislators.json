@@ -1,0 +1,403 @@
+[
+    {
+      "position_title": "Senator",
+      "firstName": "Ron",
+      "lastName": "Alting",
+      "party": "Republican",
+      "link": "/2016/legislators/ron_alting_538",
+      "fullName": "Senator Ron Alting"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "Lloyd",
+      "lastName": "Arnold",
+      "party": "Republican",
+      "link": "/2016/legislators/lloyd_arnold_1124",
+      "fullName": "Representative Lloyd Arnold"
+    },
+    {
+      "position_title": "Senator",
+      "firstName": "James",
+      "lastName": "Arnold",
+      "party": "Democratic",
+      "link": "/2016/legislators/james_arnold_917",
+      "fullName": "Senator James Arnold"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "Terri Jo",
+      "lastName": "Austin",
+      "party": "Democratic",
+      "link": "/2016/legislators/terri_jo_austin_700",
+      "fullName": "Representative Terri Jo Austin"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "Mike",
+      "lastName": "Aylesworth",
+      "party": "Republican",
+      "link": "/2016/legislators/mike_aylesworth_1",
+      "fullName": "Representative Mike Aylesworth"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "Ronald",
+      "lastName": "Bacon",
+      "party": "Republican",
+      "link": "/2016/legislators/ronald_bacon_1044",
+      "fullName": "Representative Ronald Bacon"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "James",
+      "lastName": "Baird",
+      "party": "Republican",
+      "link": "/2016/legislators/james_baird_1029",
+      "fullName": "Representative James Baird"
+    },
+    {
+      "position_title": "Senator",
+      "firstName": "Jim",
+      "lastName": "Banks",
+      "party": "Republican",
+      "link": "/2016/legislators/james_banks_1040",
+      "fullName": "Senator Jim Banks"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "John",
+      "lastName": "Bartlett",
+      "party": "Democratic",
+      "link": "/2016/legislators/john_bartlett_942",
+      "fullName": "Representative John Bartlett"
+    },
+    {
+      "position_title": "Senator",
+      "firstName": "Eric",
+      "lastName": "Bassler",
+      "party": "Republican",
+      "link": "/2016/legislators/eric_bassler_1",
+      "fullName": "Senator Eric Bassler"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "B Patrick",
+      "lastName": "Bauer",
+      "party": "Democratic",
+      "link": "/2016/legislators/b_patrick_bauer_178",
+      "fullName": "Representative B Patrick Bauer"
+    },
+    {
+      "position_title": "Senator",
+      "firstName": "Vaneta",
+      "lastName": "Becker",
+      "party": "Republican",
+      "link": "/2016/legislators/vaneta_becker_228",
+      "fullName": "Senator Vaneta Becker"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "Robert",
+      "lastName": "Behning",
+      "party": "Republican",
+      "link": "/2016/legislators/robert_behning_187",
+      "fullName": "Representative Robert Behning"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "Greg",
+      "lastName": "Beumer",
+      "party": "Republican",
+      "link": "/2016/legislators/greg_beumer_1",
+      "fullName": "Representative Greg Beumer"
+    },
+    {
+      "position_title": "Senator",
+      "firstName": "Philip",
+      "lastName": "Boots",
+      "party": "Republican",
+      "link": "/2016/legislators/philip_boots_865",
+      "fullName": "Senator Philip Boots"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "Bruce",
+      "lastName": "Borders",
+      "party": "Republican",
+      "link": "/2016/legislators/bruce_borders_1",
+      "fullName": "Representative Bruce Borders"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "Brian",
+      "lastName": "Bosma",
+      "party": "Republican",
+      "link": "/2016/legislators/brian_bosma_69",
+      "fullName": "Representative Brian Bosma"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "Mike ",
+      "lastName": "Braun",
+      "party": "Republican",
+      "link": "/2016/legislators/mike_braun_1",
+      "fullName": "Representative Mike Braun"
+    },
+    {
+      "position_title": "Senator",
+      "firstName": "Rodric",
+      "lastName": "Bray",
+      "party": "Republican",
+      "link": "/2016/legislators/rodric_bray_1106",
+      "fullName": "Senator Rodric Bray"
+    },
+    {
+      "position_title": "Senator",
+      "firstName": "Jean",
+      "lastName": "Breaux",
+      "party": "Democratic",
+      "link": "/2016/legislators/jean_breaux_889",
+      "fullName": "Senator Jean Breaux"
+    },
+    {
+      "position_title": "Senator",
+      "firstName": "John",
+      "lastName": "Broden",
+      "party": "Democratic",
+      "link": "/2016/legislators/john_broden_644",
+      "fullName": "Senator John Broden"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "Timothy",
+      "lastName": "Brown",
+      "party": "Republican",
+      "link": "/2016/legislators/timothy_brown_220",
+      "fullName": "Representative Timothy Brown"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "Charlie",
+      "lastName": "Brown",
+      "party": "Democratic",
+      "link": "/2016/legislators/charlie_brown_78",
+      "fullName": "Representative Charlie Brown"
+    },
+    {
+      "position_title": "Senator",
+      "firstName": "Liz",
+      "lastName": "Brown",
+      "party": "Republican",
+      "link": "/2016/legislators/liz_brown_1",
+      "fullName": "Senator Liz Brown"
+    },
+    {
+      "position_title": "Senator",
+      "firstName": "James",
+      "lastName": "Buck",
+      "party": "Republican",
+      "link": "/2016/legislators/james_buck_124",
+      "fullName": "Senator James Buck"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "Woody",
+      "lastName": "Burton",
+      "party": "Republican",
+      "link": "/2016/legislators/woody_burton_235",
+      "fullName": "Representative Woody Burton"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "Martin",
+      "lastName": "Carbaugh",
+      "party": "Republican",
+      "link": "/2016/legislators/martin_carbaugh_1125",
+      "fullName": "Representative Martin Carbaugh"
+    },
+    {
+      "position_title": "Senator",
+      "firstName": "Ed",
+      "lastName": "Charbonneau",
+      "party": "Republican",
+      "link": "/2016/legislators/ed_charbonneau_919",
+      "fullName": "Senator Ed Charbonneau"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "Robert",
+      "lastName": "Cherry",
+      "party": "Republican",
+      "link": "/2016/legislators/robert_cherry_395",
+      "fullName": "Representative Robert Cherry"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "Edward",
+      "lastName": "Clere",
+      "party": "Republican",
+      "link": "/2016/legislators/edward_clere_984",
+      "fullName": "Representative Edward Clere"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "Anthony",
+      "lastName": "Cook",
+      "party": "Republican",
+      "link": "/2016/legislators/anthony_cook_1",
+      "fullName": "Representative Anthony Cook"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "Casey",
+      "lastName": "Cox",
+      "party": "Republican",
+      "link": "/2016/legislators/casey_cox_181",
+      "fullName": "Representative Casey Cox"
+    },
+    {
+      "position_title": "Senator",
+      "firstName": "Michael",
+      "lastName": "Crider",
+      "party": "Republican",
+      "link": "/2016/legislators/michael_crider_1130",
+      "fullName": "Senator Michael Crider"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "Wes",
+      "lastName": "Culver",
+      "party": "Republican",
+      "link": "/2016/legislators/wes_culver_981",
+      "fullName": "Representative Wes Culver"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "Steven",
+      "lastName": "Davisson",
+      "party": "Republican",
+      "link": "/2016/legislators/steven_davisson_1034",
+      "fullName": "Representative Steven Davisson"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "Edward",
+      "lastName": "DeLaney",
+      "party": "Democratic",
+      "link": "/2016/legislators/edward_delaney_988",
+      "fullName": "Representative Edward DeLaney"
+    },
+    {
+      "position_title": "Senator",
+      "firstName": "Michael",
+      "lastName": "Delph",
+      "party": "Republican",
+      "link": "/2016/legislators/michael_delph_844",
+      "fullName": "Senator Michael Delph"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "Thomas",
+      "lastName": "Dermody",
+      "party": "Republican",
+      "link": "/2016/legislators/thomas_dermody_872",
+      "fullName": "Representative Thomas Dermody"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "Dale",
+      "lastName": "DeVon",
+      "party": "Republican",
+      "link": "/2016/legislators/dale_devon_1108",
+      "fullName": "Representative Dale DeVon"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "Ryan",
+      "lastName": "Dvorak",
+      "party": "Democratic",
+      "link": "/2016/legislators/ryan_dvorak_697",
+      "fullName": "Representative Ryan Dvorak"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "Sean",
+      "lastName": "Eberhart",
+      "party": "Republican",
+      "link": "/2016/legislators/sean_eberhart_875",
+      "fullName": "Representative Sean Eberhart"
+    },
+    {
+      "position_title": "Senator",
+      "firstName": "Douglas",
+      "lastName": "Eckerty",
+      "party": "Republican",
+      "link": "/2016/legislators/douglas_eckerty_1022",
+      "fullName": "Senator Douglas Eckerty"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "Jeff",
+      "lastName": "Ellington",
+      "party": "Republican",
+      "link": "/2016/legislators/jeff_ellington_1",
+      "fullName": "Representative Jeff Ellington"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "Sue",
+      "lastName": "Errington",
+      "party": "Democratic",
+      "link": "/2016/legislators/sue_errington_866",
+      "fullName": "Representative Sue Errington"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "Bill",
+      "lastName": "Fine",
+      "party": "Republican",
+      "link": "/2016/legislators/bill_fine_1",
+      "fullName": "Representative Bill Fine"
+    },
+    {
+      "position_title": "Senator",
+      "firstName": "Jon",
+      "lastName": "Ford",
+      "party": "Republican",
+      "link": "/2016/legislators/jon_ford_1",
+      "fullName": "Senator Jon Ford"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "Dan",
+      "lastName": "Forestal",
+      "party": "Democratic",
+      "link": "/2016/legislators/dan_forestal_1129",
+      "fullName": "Representative Dan Forestal"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "William",
+      "lastName": "Friend",
+      "party": "Republican",
+      "link": "/2016/legislators/william_friend_238",
+      "fullName": "Representative William Friend"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "David",
+      "lastName": "Frizzell",
+      "party": "Republican",
+      "link": "/2016/legislators/david_frizzell_92",
+      "fullName": "Representative David Frizzell"
+    },
+    {
+      "position_title": "Representative",
+      "firstName": "Randall",
+      "lastName": "Frye",
+      "party": "Republican",
+      "link": "/2016/legislators/randall_frye_1039",
+      "fullName": "Representative Randall Frye"
+    }
+
+]

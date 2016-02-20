@@ -1,0 +1,48 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "system",
+        "sourceMap": true,
+        "moduleResolution": "node",
+        "isolatedModules": false,
+        "jsx": "react",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "declaration": false,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "noLib": false,
+        "preserveConstEnums": true,
+        "suppressImplicitAnyIndexErrors": true
+    },
+    "filesGlob": [
+        "**/*.ts",
+        "**/*.tsx",
+        "!node_modules/**"
+    ],
+    "compileOnSave": true,
+    "buildOnSave": false,
+    "files": [
+        "app/boot.ts",
+        "app/components/app.component.ts",
+        "app/components/app.legislatureimage.ts",
+        "app/components/chart.directive.ts",
+        "app/models/Bill.ts",
+        "app/models/Chamber.ts",
+        "app/models/IMyIGADataService.ts",
+        "app/models/Legislator.ts",
+        "app/services/MyIGADataService.ts",
+        "app/services/MyToken.ts",
+        "typings/angular2/angular2-2.0.0-alpha.39.d.ts",
+        "typings/angular2/http-2.0.0-alpha.39.d.ts",
+        "typings/angular2/router-2.0.0-alpha.39.d.ts",
+        "typings/chartjs/chart.d.ts",
+        "typings/charts.d.ts",
+        "typings/es6-shim/es6-shim.d.ts",
+        "typings/jquery/jquery.d.ts",
+        "typings/requirejs/require.d.ts"
+    ],
+    "atom": {
+        "rewriteTsconfig": true
+    }
+}
