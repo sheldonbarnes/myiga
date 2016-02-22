@@ -12,6 +12,6 @@ export interface IMyIGADataService {
   getCalendars();
   getJournals();
   getLegislators() : Observable<Response>;
-  getLegislatorsWithDetails() : Legislator[];
+  //getLegislatorsWithDetails() : Legislator[];
   getBills() : Observable<Response>;
 }

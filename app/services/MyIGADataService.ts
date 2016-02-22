@@ -5,6 +5,7 @@ import {Injectable} from 'angular2/core';
 import {IMyIGADataService} from '../models/IMyIGADataService';
 import {Observable} from 'rxjs/Observable';
 import {ReplaySubject} from 'rxjs/subject/ReplaySubject';
+import {Subject} from 'rxjs/subject';
 
 import {Response} from 'angular2/src/http/static_response';
 import {Chamber} from '../models/Chamber';
@@ -24,6 +25,9 @@ export class MyIGADataService implements IMyIGADataService{
 
   myToken: string = MyToken.getToken();
 
+
+  mylegislators: Legislator[] = [];
+
   /*
 
   declare a class with a static method that returns your token.
@@ -35,9 +39,36 @@ export class MyIGADataService implements IMyIGADataService{
   }
   */
 
+  public representatives: Legislator[] = [];
+  public senators: Legislator[] = [];
+  //public legislators: Legislator[] = [];
+  public legislators: ReplaySubject<Legislator> = new ReplaySubject<Legislator>();
+
   constructor (public http: Http) {
+    this.getLegislators1()
+    .map(res => Observable.fromArray(res.json().items))
+    .mergeAll()
+    .map(y => this.getLegislatorDetails(y.link))
+    .mergeAll()
+    .subscribe(x => {
+      //this.legislators.push(x);
+      this.legislators.next(x);
+    });
+
+
+    //this.cool.subscribe(x => console.log(x));
+
+    this.legislators.filter(x => x.chamber.name == 'House')
+    .subscribe(x => this.representatives.push(x));
+
+
+    this.legislators.filter(x => x.chamber.name == 'Senate')
+    .subscribe(x => this.senators.push(x));
+
 
   }
+
+
 
   getSessions() {}
   getConstitution() {}
@@ -48,23 +79,42 @@ export class MyIGADataService implements IMyIGADataService{
   getJournals() {}
 
   getLegislators() : Observable<Response> {
-    this.getBills1();
+
+    var headers = new Headers();
+    headers.append('Accept', 'application/json');
+    headers.append('Authorization', this.myToken);
+
+    return this.http.get('dapi/legislators.json');
+    //return this.http.get('https://api.iga.in.gov/2016/legislators', { headers: headers});
+
+
+  }
+
+  getLegislators1() : Observable<Response>{
+
+    console.log('Getting legislators');
+    //this.republicanRepresentativeCount = 25;
 
     var headers = new Headers();
     headers.append('Accept', 'application/json');
     headers.append('Authorization', this.myToken);
 
     //return this.http.get('dapi/legislators.json');
-    return this.http.get('https://api.iga.in.gov/2016/legislators', { headers: headers});
+    return this.http.get('https://api.iga.in.gov/2016/legislators', { headers: headers})
+    //.map(res => res.json().items);
 
 
   }
+
+
   getBills() : Observable<Response> {
     return this.http.get('dapi/bills.json');
   }
 
   getLegislatorDetails(link: string) : any {
 
+
+    console.log('Legislator details called');
     var headers = new Headers();
     headers.append('Accept', 'application/json');
     headers.append('Authorization', this.myToken);
@@ -76,10 +126,8 @@ export class MyIGADataService implements IMyIGADataService{
     return this.http.get(legLink, { headers: headers})
           .map (res =>  res.json());
 
-
-
-
   }
+
   getLegislatorImage (link: string) : Observable<Response> {
     var headers = new Headers();
     headers.append('Accept', 'image/png');
@@ -91,29 +139,6 @@ export class MyIGADataService implements IMyIGADataService{
 
     return this.http.get(legImageLink, { headers: headers})
           .map (res =>   res);
-  }
-
-  getLegislatorsWithDetails () : Legislator[] {
-
-    var myNewLeg : Legislator[] = [];
-    console.log('I was called: true I was called');
-    this.http.get('dapi/legislators.json')
-    .map(res => res.json())
-    .subscribe(legislators => {
-        // gets list of legislators
-        Observable.fromArray(legislators).subscribe(leg => {
-          this.getLegislatorDetails(leg.link)
-                .filter(te => te.chamber.name == 'House' && te.party == 'Republican')
-                      .subscribe( test => {
-                        //console.log(test);
-                        myNewLeg.push(test);
-                      });
-        });
-
-    });
-
-
-    return myNewLeg;
   }
 
 

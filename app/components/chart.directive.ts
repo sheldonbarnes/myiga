@@ -1,27 +1,25 @@
-/// <reference path="../../typings/chartjs/chart.d.ts" />
+import {Directive, ElementRef, Renderer, Input, Inject, Component} from 'angular2/core';
+import {MyIGADataService} from '../services/MyIGADataService';
 
-import {Directive, ElementRef, Renderer, Input} from 'angular2/core';
 @Directive({
     selector: '[chart]'
 })
 export class ChartDirective {
+
+  @Input() house: number;
+
     constructor(el: ElementRef, renderer: Renderer) {
         //el.nativeElement.style.backgroundColor = 'yellow';
 
         var data = [{
-                value: 20,
-                color: "#0000FF"
-            }, {
-                value: 80,
-                color: "#F7464A"
-            }
+               value: 3,
+               color: "Blue"
+           }, {
+               value: 13,
+               color: "Red"
+           }
 
-            ]
-
-            var options = {
-                animation: false
-            };
-
+         ];
             //Get the context of the canvas element we want to select
 
         var ctx: any = el.nativeElement.getContext("2d");
@@ -30,4 +28,66 @@ export class ChartDirective {
         ////lineChartOptions.datasetFill = false;
         donutChart.Doughnut(data);
     }
+
+
+}
+
+@Directive({
+    selector: '[chart1]'
+})
+export class ChartDirective1 {
+
+  @Input() house: number;
+
+    constructor(el: ElementRef, renderer: Renderer) {
+        //el.nativeElement.style.backgroundColor = 'yellow';
+
+        var data = [{
+               value: 8,
+               color: "Blue"
+           }, {
+               value: 26,
+               color: "Red"
+           }
+
+         ];
+            //Get the context of the canvas element we want to select
+
+        var ctx: any = el.nativeElement.getContext("2d");
+        var donutChart = new Chart(ctx);
+        ////var lineChartOptions = areaChartOptions;
+        ////lineChartOptions.datasetFill = false;
+        donutChart.Doughnut(data);
+    }
+
+
+}
+
+
+@Directive({
+    selector: '[executive]'
+})
+export class ExecutiveChart {
+
+  @Input() house: number;
+
+    constructor(el: ElementRef, renderer: Renderer) {
+        //el.nativeElement.style.backgroundColor = 'yellow';
+
+        var data = [{
+               value: 100,
+               color: "Red"
+           }
+
+         ];
+            //Get the context of the canvas element we want to select
+
+        var ctx: any = el.nativeElement.getContext("2d");
+        var donutChart = new Chart(ctx);
+        ////var lineChartOptions = areaChartOptions;
+        ////lineChartOptions.datasetFill = false;
+        donutChart.Doughnut(data);
+    }
+
+
 }
