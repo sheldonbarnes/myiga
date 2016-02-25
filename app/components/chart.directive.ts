@@ -12,10 +12,10 @@ export class ChartDirective {
         //el.nativeElement.style.backgroundColor = 'yellow';
 
         var data = [{
-               value: 3,
+               value: 29,
                color: "Blue"
            }, {
-               value: 13,
+               value: 71,
                color: "Red"
            }
 
@@ -43,10 +43,10 @@ export class ChartDirective1 {
         //el.nativeElement.style.backgroundColor = 'yellow';
 
         var data = [{
-               value: 8,
+               value: 10,
                color: "Blue"
            }, {
-               value: 26,
+               value: 40,
                color: "Red"
            }
 

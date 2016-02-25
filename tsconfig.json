@@ -25,6 +25,7 @@
     "files": [
         "app/boot.ts",
         "app/components/app.component.ts",
+        "app/components/app.homedashboardcomponent.ts",
         "app/components/app.legislatureimage.ts",
         "app/components/app.senatelegislatorscomponent.ts",
         "app/components/chart.directive.ts",
@@ -41,7 +42,9 @@
         "typings/angular2/router-2.0.0-alpha.39.d.ts",
         "typings/es6-shim/es6-shim.d.ts",
         "typings/jquery/jquery.d.ts",
-        "typings/requirejs/require.d.ts"
+        "typings/requirejs/require.d.ts",
+        "typings/rx/rx-lite.d.ts",
+        "typings/rx/rx.d.ts"
     ],
     "atom": {
         "rewriteTsconfig": true

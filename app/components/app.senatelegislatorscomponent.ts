@@ -15,7 +15,8 @@ import  'rxjs/add/operator/map';
 @View({
 
     directives : [LegislatureImage],
-
+    templateUrl: 'senators.html'
+/*
     template:
     `
     <h1>{{chamber}} Legislators</h1>
@@ -28,7 +29,7 @@ import  'rxjs/add/operator/map';
 
     <tbody>
       <tr><td>Image</td><td>First Name</td><td>Last Name</td><td>Party</td><td>chamber</td></tr>
-      <tr  *ngFor="#legislator of senateLegislators">
+      <tr  *ngFor="#legislator of senateLegislators1">
 
       <td>
 
@@ -45,7 +46,7 @@ import  'rxjs/add/operator/map';
     </tbody>
     </table>
 
-    `
+    `*/
 })
 
 
@@ -55,19 +56,40 @@ export class SenateLegislatorsComponent {
   @Input() chambername: string = "";
 
   public senateLegislators1 : Legislator[] = [];
+  public senateDemocrats : Legislator[] = [];
   constructor(@Inject(MyIGADataService) public dataService: MyIGADataService) {
     //console.log(this.chambername);
 
     console.log('This is the beginning of the constructor for SenateLegislatorsComponent ');
 
+
     dataService.legislators
-    .subscribe(x=> console.log('Cool' + JSON.stringify(x)));
+    .filter(leg => leg.party == "Democratic" && leg.chamber.name == "Senate")
+    .subscribe(x=> this.senateDemocrats.push(x));
+
+    dataService.legislators
+    .filter(leg => leg.party == "Republican" && leg.chamber.name == "Senate")
+    .subscribe(x=>
+      {
+        //console.log('Pushing')
+        this.senateLegislators1.push(x);
+        //console.log(this.senateLegislators1.length);
+      },
+      function(err){
+          console.log(err);
+      },
+      function() {
+          console.log('Completed');
+      }
+    );
+
+    console.log(dataService.senators.length + ' is the length');
     //this.senateLegislators1 = this.dataService.legislators;
 
   }
 
   ngOnInit () {
-    console.log(this.chambername);
+    console.log(this.dataService.senators.length + ' is the length');
 
     //console.log('I am in the constructor for SenateLegislatorsComponent ' + this.senateLegislators);
 

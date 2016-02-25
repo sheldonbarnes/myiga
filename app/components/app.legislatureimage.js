@@ -37,7 +37,7 @@ System.register(['angular2/core', '../services/MyIGADataService', 'rxjs/add/oper
                         selector: 'legimg'
                     }),
                     core_1.View({
-                        template: "\n\n\n\n    <img src=\"https://iga.in.gov/legislative/2016/portraits/{{ link }}\" style=\"border-radius:55%\" width=100 height=80>\n\n    "
+                        template: "\n\n\n\n    <img src=\"http://iga.in.gov/legislative/2016/portraits/{{ link }}\" style=\"border-radius:55%\" width=100 height=80>\n\n    "
                     }), 
                     __metadata('design:paramtypes', [MyIGADataService_1.MyIGADataService])
                 ], LegislatureImage);

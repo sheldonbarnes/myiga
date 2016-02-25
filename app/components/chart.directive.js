@@ -1,5 +1,4 @@
 System.register(['angular2/core'], function(exports_1) {
-    "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -20,10 +19,10 @@ System.register(['angular2/core'], function(exports_1) {
             ChartDirective = (function () {
                 function ChartDirective(el, renderer) {
                     var data = [{
-                            value: 3,
+                            value: 29,
                             color: "Blue"
                         }, {
-                            value: 13,
+                            value: 71,
                             color: "Red"
                         }
                     ];
@@ -42,15 +41,15 @@ System.register(['angular2/core'], function(exports_1) {
                     __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer])
                 ], ChartDirective);
                 return ChartDirective;
-            }());
+            })();
             exports_1("ChartDirective", ChartDirective);
             ChartDirective1 = (function () {
                 function ChartDirective1(el, renderer) {
                     var data = [{
-                            value: 8,
+                            value: 10,
                             color: "Blue"
                         }, {
-                            value: 26,
+                            value: 40,
                             color: "Red"
                         }
                     ];
@@ -69,7 +68,7 @@ System.register(['angular2/core'], function(exports_1) {
                     __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer])
                 ], ChartDirective1);
                 return ChartDirective1;
-            }());
+            })();
             exports_1("ChartDirective1", ChartDirective1);
             ExecutiveChart = (function () {
                 function ExecutiveChart(el, renderer) {
@@ -93,7 +92,7 @@ System.register(['angular2/core'], function(exports_1) {
                     __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer])
                 ], ExecutiveChart);
                 return ExecutiveChart;
-            }());
+            })();
             exports_1("ExecutiveChart", ExecutiveChart);
         }
     }

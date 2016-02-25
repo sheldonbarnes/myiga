@@ -3,9 +3,16 @@ import {Legislator} from './Legislator';
 
 export class IBill {
   billName: string;
-  originalChamber: Chamber;
+  originChamber: Chamber;
   type: string;
   link: string;
+
+  constructor() {
+
+    this.originChamber = new Chamber();
+
+  }
+
 }
 
 

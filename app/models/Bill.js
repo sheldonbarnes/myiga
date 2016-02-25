@@ -1,10 +1,15 @@
-System.register([], function(exports_1) {
+System.register(['./Chamber'], function(exports_1) {
+    var Chamber_1;
     var IBill, Bill;
     return {
-        setters:[],
+        setters:[
+            function (Chamber_1_1) {
+                Chamber_1 = Chamber_1_1;
+            }],
         execute: function() {
             IBill = (function () {
                 function IBill() {
+                    this.originChamber = new Chamber_1.Chamber();
                 }
                 return IBill;
             })();

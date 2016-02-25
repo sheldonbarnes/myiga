@@ -1,6 +1,4 @@
 import {Http,  Headers} from 'angular2/http';
-
-
 import {Injectable} from 'angular2/core';
 import {IMyIGADataService} from '../models/IMyIGADataService';
 import {Observable} from 'rxjs/Observable';
@@ -13,10 +11,14 @@ import {Legislator} from '../models/Legislator';
 import {Bill} from '../models/Bill';
 import {IBill} from '../models/Bill';
 import {MyToken} from './MyToken';
+import {AsapScheduler} from 'rxjs/scheduler/AsapScheduler';
+import {QueueScheduler} from 'rxjs/scheduler/QueueScheduler';
+
 
 import  'rxjs/add/operator/map';
 import  'rxjs/add/operator/count';
 import  'rxjs/add/operator/filter';
+import  'rxjs/add/operator/observeOn';
 import  'rxjs/add/observable/from';
 import  'rxjs/add/observable/fromArray';
 
@@ -39,21 +41,69 @@ export class MyIGADataService implements IMyIGADataService{
   }
   */
 
+
   public representatives: Legislator[] = [];
   public senators: Legislator[] = [];
   //public legislators: Legislator[] = [];
   public legislators: ReplaySubject<Legislator> = new ReplaySubject<Legislator>();
+  public bills: ReplaySubject<Bill> = new ReplaySubject<Bill>();
+  public billsList: ReplaySubject<IBill> = new ReplaySubject<IBill>();
+  public legislatorsList: ReplaySubject<Legislator> = new ReplaySubject<Legislator>();
 
+  //public bills: Bill[] = [];
   constructor (public http: Http) {
+
+
     this.getLegislators1()
     .map(res => Observable.fromArray(res.json().items))
     .mergeAll()
     .map(y => this.getLegislatorDetails(y.link))
     .mergeAll()
+    //.take(15)
     .subscribe(x => {
-      //this.legislators.push(x);
       this.legislators.next(x);
-    });
+    },
+    function(err){
+
+    },
+    function() {
+      console.log('Completed receiving legislators');
+    }
+
+
+  );
+
+  this.getLegislatorsList()
+  .map(res => Observable.fromArray(res.json().items),AsapScheduler)
+  .mergeAll()
+  .subscribe (x => this.legislatorsList.next(x));
+
+  console.log(this.legislatorsList.count + 'is the count of legislators I received');
+  this.getBillsList()
+  .map(res => Observable.fromArray(res.json().items),AsapScheduler)
+  .mergeAll()
+  .subscribe (x => this.billsList.next(x));
+
+  /*
+  .map(y => this.getBillDetails(y.link), AsapScheduler)
+  .mergeAll()
+  .subscribe(x => {
+    //this.legislators.push(x);
+    //console.log(JSON.stringify(x));
+
+    this.bills.next(x);
+  },
+  function(err){
+
+  },
+  function() {
+    console.log('Completed receiving bills');
+  }
+
+
+);*/
+
+    console.log('This is the end');
 
 
     //this.cool.subscribe(x => console.log(x));
@@ -100,16 +150,70 @@ export class MyIGADataService implements IMyIGADataService{
     headers.append('Authorization', this.myToken);
 
     //return this.http.get('dapi/legislators.json');
-    return this.http.get('https://api.iga.in.gov/2016/legislators', { headers: headers})
+    return this.http.get('https://api.iga.in.gov/2016/legislators?per_page=100000', { headers: headers})
     //.map(res => res.json().items);
 
 
   }
 
+  getLegislatorsList() : Observable<Response>{
 
-  getBills() : Observable<Response> {
-    return this.http.get('dapi/bills.json');
+    console.log('Getting legislators');
+    //this.republicanRepresentativeCount = 25;
+
+    var headers = new Headers();
+    headers.append('Accept', 'application/json');
+    headers.append('Authorization', this.myToken);
+
+    //return this.http.get('dapi/legislators.json');
+    return this.http.get('https://api.iga.in.gov/2016/legislators?per_page=300', { headers: headers})
+    //.map(res => res.json().items);
+
+
   }
+
+  getBillsList() : Observable<Response> {
+
+    console.log('Getting Bills List');
+    //this.republicanRepresentativeCount = 25;
+
+    var headers = new Headers();
+    headers.append('Accept', 'application/json');
+    headers.append('Authorization', this.myToken);
+
+    //return this.http.get('dapi/legislators.json');
+    return this.http.get('https://api.iga.in.gov/2016/bills?per_page=2000', { headers: headers})
+    //https://api.iga.in.gov//2016/bills?per_page=2000
+    //return this.http.get('dapi/bills.json');
+  }
+  getBills() : Observable<Response> {
+
+    console.log('Getting Bills');
+    //this.republicanRepresentativeCount = 25;
+
+    var headers = new Headers();
+    headers.append('Accept', 'application/json');
+    headers.append('Authorization', this.myToken);
+
+    //return this.http.get('dapi/legislators.json');
+    return this.http.get('https://api.iga.in.gov/2016/bills?per_page=2000', { headers: headers})
+    //https://api.iga.in.gov//2016/bills?per_page=2000
+    //return this.http.get('dapi/bills.json');
+  }
+  getBillDetails(link: string) : any {
+    console.log('Bill details called');
+    var headers = new Headers();
+    headers.append('Accept', 'application/json');
+    headers.append('Authorization', this.myToken);
+
+    //return this.http.get('dapi/legislators.json');
+    var legLink: string = 'https://api.iga.in.gov' + link;
+    //console.log('About to make a call to ' + legLink);
+
+    return this.http.get(legLink, { headers: headers})
+          .map (res =>  res.json());
+  }
+
 
   getLegislatorDetails(link: string) : any {
 

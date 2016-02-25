@@ -1,5 +1,4 @@
 System.register(['angular2/core', '../services/MyIGADataService', './app.legislatureimage', 'rxjs/add/operator/map'], function(exports_1) {
-    "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -29,16 +28,29 @@ System.register(['angular2/core', '../services/MyIGADataService', './app.legisla
         execute: function() {
             SenateLegislatorsComponent = (function () {
                 function SenateLegislatorsComponent(dataService) {
+                    var _this = this;
                     this.dataService = dataService;
                     this.senateLegislators = [];
                     this.chambername = "";
                     this.senateLegislators1 = [];
+                    this.senateDemocrats = [];
                     console.log('This is the beginning of the constructor for SenateLegislatorsComponent ');
                     dataService.legislators
-                        .subscribe(function (x) { return console.log('Cool' + JSON.stringify(x)); });
+                        .filter(function (leg) { return leg.party == "Democratic" && leg.chamber.name == "Senate"; })
+                        .subscribe(function (x) { return _this.senateDemocrats.push(x); });
+                    dataService.legislators
+                        .filter(function (leg) { return leg.party == "Republican" && leg.chamber.name == "Senate"; })
+                        .subscribe(function (x) {
+                        _this.senateLegislators1.push(x);
+                    }, function (err) {
+                        console.log(err);
+                    }, function () {
+                        console.log('Completed');
+                    });
+                    console.log(dataService.senators.length + ' is the length');
                 }
                 SenateLegislatorsComponent.prototype.ngOnInit = function () {
-                    console.log(this.chambername);
+                    console.log(this.dataService.senators.length + ' is the length');
                 };
                 __decorate([
                     core_1.Input(), 
@@ -54,13 +66,13 @@ System.register(['angular2/core', '../services/MyIGADataService', './app.legisla
                     }),
                     core_1.View({
                         directives: [app_legislatureimage_1.LegislatureImage],
-                        template: "\n    <h1>{{chamber}} Legislators</h1>\n\n\n{{senateLegislators.length}} Legislators\n\n\n    <table border=0 cellspacing=5 cellspacing=5>\n\n    <tbody>\n      <tr><td>Image</td><td>First Name</td><td>Last Name</td><td>Party</td><td>chamber</td></tr>\n      <tr  *ngFor=\"#legislator of senateLegislators\">\n\n      <td>\n\n      <legimg [link] = \"legislator.pngDownloadLink\"> </legimg>\n\n      </td>\n      <td>{{legislator.firstName}}  </td>\n      <td>{{legislator.lastName}}</td>\n      <td>{{legislator.party}}</td>\n      <td>{{legislator.chamber.name}}</td>\n      <td><button>follow</button></td>\n\n      </tr>\n    </tbody>\n    </table>\n\n    "
+                        templateUrl: 'senators.html'
                     }),
                     __param(0, core_1.Inject(MyIGADataService_1.MyIGADataService)), 
                     __metadata('design:paramtypes', [MyIGADataService_1.MyIGADataService])
                 ], SenateLegislatorsComponent);
                 return SenateLegislatorsComponent;
-            }());
+            })();
             exports_1("SenateLegislatorsComponent", SenateLegislatorsComponent);
         }
     }
