@@ -1,4 +1,4 @@
-System.register(['angular2/http', 'angular2/core', 'rxjs/Observable', 'rxjs/subject/ReplaySubject', './MyToken', 'rxjs/scheduler/AsapScheduler', 'rxjs/add/operator/map', 'rxjs/add/operator/count', 'rxjs/add/operator/filter', 'rxjs/add/operator/observeOn', 'rxjs/add/observable/from', 'rxjs/add/observable/fromArray'], function(exports_1) {
+System.register(['angular2/http', 'angular2/core', 'rxjs/Observable', 'rxjs/subject/ReplaySubject', './MyToken', '../../node_modules/rx/dist/rx.all.js', 'rxjs/add/operator/map', 'rxjs/add/operator/count', 'rxjs/add/operator/filter', 'rxjs/add/operator/observeOn', 'rxjs/add/observable/from', 'rxjs/add/observable/fromArray'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/http', 'angular2/core', 'rxjs/Observable', 'rxjs/subj
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var http_1, core_1, Observable_1, ReplaySubject_1, MyToken_1, AsapScheduler_1;
+    var http_1, core_1, Observable_1, ReplaySubject_1, MyToken_1;
     var MyIGADataService;
     return {
         setters:[
@@ -27,15 +27,13 @@ System.register(['angular2/http', 'angular2/core', 'rxjs/Observable', 'rxjs/subj
             function (MyToken_1_1) {
                 MyToken_1 = MyToken_1_1;
             },
-            function (AsapScheduler_1_1) {
-                AsapScheduler_1 = AsapScheduler_1_1;
-            },
             function (_1) {},
             function (_2) {},
             function (_3) {},
             function (_4) {},
             function (_5) {},
-            function (_6) {}],
+            function (_6) {},
+            function (_7) {}],
         execute: function() {
             MyIGADataService = (function () {
                 function MyIGADataService(http) {
@@ -47,26 +45,18 @@ System.register(['angular2/http', 'angular2/core', 'rxjs/Observable', 'rxjs/subj
                     this.senators = [];
                     this.legislators = new ReplaySubject_1.ReplaySubject();
                     this.bills = new ReplaySubject_1.ReplaySubject();
+                    this.biPartisanBills = new ReplaySubject_1.ReplaySubject();
                     this.billsList = new ReplaySubject_1.ReplaySubject();
                     this.legislatorsList = new ReplaySubject_1.ReplaySubject();
-                    this.getLegislators1()
-                        .map(function (res) { return Observable_1.Observable.fromArray(res.json().items); })
-                        .mergeAll()
-                        .map(function (y) { return _this.getLegislatorDetails(y.link); })
-                        .mergeAll()
-                        .subscribe(function (x) {
-                        _this.legislators.next(x);
-                    }, function (err) {
-                    }, function () {
-                        console.log('Completed receiving legislators');
-                    });
+                    this.biPartisanBills1 = [];
+                    this.bills1 = [];
                     this.getLegislatorsList()
-                        .map(function (res) { return Observable_1.Observable.fromArray(res.json().items); }, AsapScheduler_1.AsapScheduler)
+                        .map(function (res) { return Observable_1.Observable.fromArray(res.json().items); }, Rx.Scheduler.immediate)
                         .mergeAll()
                         .subscribe(function (x) { return _this.legislatorsList.next(x); });
                     console.log(this.legislatorsList.count + 'is the count of legislators I received');
                     this.getBillsList()
-                        .map(function (res) { return Observable_1.Observable.fromArray(res.json().items); }, AsapScheduler_1.AsapScheduler)
+                        .map(function (res) { return Observable_1.Observable.fromArray(res.json().items); })
                         .mergeAll()
                         .subscribe(function (x) { return _this.billsList.next(x); });
                     console.log('This is the end');
@@ -116,6 +106,18 @@ System.register(['angular2/http', 'angular2/core', 'rxjs/Observable', 'rxjs/subj
                     headers.append('Authorization', this.myToken);
                     return this.http.get('https://api.iga.in.gov/2016/bills?per_page=2000', { headers: headers });
                 };
+                MyIGADataService.prototype.postBill = function (inBill) {
+                    console.log('Posting Bills' + JSON.stringify(inBill));
+                    var headers1 = new http_1.Headers();
+                    headers1.append('Content-Type', 'application/json');
+                    return this.http.post('http://localhost:8080/api/bill', JSON.stringify(inBill), { headers: headers1 });
+                };
+                MyIGADataService.prototype.postLegislator = function (inBill) {
+                    console.log('Posting Legislator' + JSON.stringify(inBill));
+                    var headers1 = new http_1.Headers();
+                    headers1.append('Content-Type', 'application/json');
+                    return this.http.post('http://localhost:8080/api/legislator', JSON.stringify(inBill), { headers: headers1 });
+                };
                 MyIGADataService.prototype.getBillDetails = function (link) {
                     console.log('Bill details called');
                     var headers = new http_1.Headers();
@@ -126,7 +128,6 @@ System.register(['angular2/http', 'angular2/core', 'rxjs/Observable', 'rxjs/subj
                         .map(function (res) { return res.json(); });
                 };
                 MyIGADataService.prototype.getLegislatorDetails = function (link) {
-                    console.log('Legislator details called');
                     var headers = new http_1.Headers();
                     headers.append('Accept', 'application/json');
                     headers.append('Authorization', this.myToken);

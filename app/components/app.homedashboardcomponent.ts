@@ -4,6 +4,8 @@ import {MyIGADataService} from '../services/MyIGADataService';
 import {Legislator} from '../models/Legislator';
 import {Bill} from '../models/Bill';
 import {IBill} from '../models/Bill';
+import {StaticBill} from '../models/Bill';
+
 import {LegislatureImage} from './app.legislatureimage';
 import {ChartDirective,ChartDirective1, ExecutiveChart} from './chart.directive';
 import {DonutChart} from './chart.donutchart';
@@ -54,6 +56,8 @@ export class HomeDashBoardComponent {
   public houseBillsList: IBill[] = [];
   public senateBillsList: IBill[] = [];
 
+  public biPartisanBills : Bill[] = [];
+
   public houseRepublicansList: Legislator[] = [];
   public houseDemocratsList: Legislator[] = [];
 
@@ -76,6 +80,11 @@ export class HomeDashBoardComponent {
 
     this.mylegislators = dataService.representatives;
     this.senators1 = dataService.senators;
+    //this.biPartisanBills = dataService.biPartisanBills1;
+
+    console.log('This is where it starts');
+
+    console.log(JSON.stringify(dataService.biPartisanBills1));
 
     dataService.legislatorsList.filter(x => x.party == 'Republican' && x.position_title == 'Senator')
     .subscribe(senator => this.senateRepublicansList.push(senator));

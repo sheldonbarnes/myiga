@@ -250,9 +250,30 @@
                               <a [routerLink]="['/Senators']">Senate</a>
 
                             </li>
+
                             <li>
-                                <a href="morris.html">House</a>
+                              <a href="#">House<span class="fa arrow"></span></a>
+                              <ul class="nav nav-third-level">
+                                  <li>
+                                      <a href="#">Representatives</a>
+                                  </li>
+                                  <li>
+                                      <a href="#">Bills</a>
+                                  </li>
+                              </ul>
                             </li>
+                            <li>
+                              <a href="#">Senate<span class="fa arrow"></span></a>
+                              <ul class="nav nav-third-level">
+                                  <li>
+                                      <a [routerLink]="['/SenateSenators']">Senators</a>
+                                  </li>
+                                  <li>
+                                      <a [routerLink]="['/SenateBills']">Bills</a>
+                                  </li>
+                              </ul>
+                            </li>
+
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>

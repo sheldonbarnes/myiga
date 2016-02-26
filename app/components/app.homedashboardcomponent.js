@@ -58,6 +58,7 @@ System.register(['angular2/core', '../services/MyIGADataService', './app.legisla
                     this.houseBills = [];
                     this.houseBillsList = [];
                     this.senateBillsList = [];
+                    this.biPartisanBills = [];
                     this.houseRepublicansList = [];
                     this.houseDemocratsList = [];
                     this.senateRepublicansList = [];
@@ -65,6 +66,8 @@ System.register(['angular2/core', '../services/MyIGADataService', './app.legisla
                     console.log('I am in the home dashboard controller');
                     this.mylegislators = dataService.representatives;
                     this.senators1 = dataService.senators;
+                    console.log('This is where it starts');
+                    console.log(JSON.stringify(dataService.biPartisanBills1));
                     dataService.legislatorsList.filter(function (x) { return x.party == 'Republican' && x.position_title == 'Senator'; })
                         .subscribe(function (senator) { return _this.senateRepublicansList.push(senator); });
                     dataService.legislatorsList.filter(function (x) { return x.party == 'Democratic' && x.position_title == 'Senator'; })
