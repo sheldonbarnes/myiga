@@ -27,6 +27,7 @@ System.register(['angular2/core', '../services/MyIGADataService', 'rxjs/add/oper
                     this.dataService = dataService;
                 }
                 LegislatureImageSmall.prototype.ngOnInit = function () {
+                    console.log('I am in the leg image 1' + JSON.stringify(this.link));
                     this.link = this.link.replace("/2016/legislators/", "legislator_");
                     this.link = this.link.replace("?format=png", "");
                 };

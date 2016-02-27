@@ -171,6 +171,21 @@ export class MyLocalIGADataService implements IMyIGADataService{
     //return this.http.get('dapi/bills.json');
   }
 
+  getBillComments(billName: string) : Observable<Response>  {
+
+    console.log('Getting Bill Comments for ' + billName);
+    //this.republicanRepresentativeCount = 25;
+
+    var headers = new Headers();
+    headers.append('Accept', 'application/json');
+    //headers.append('Authorization', this.myToken);
+
+    //return this.http.get('dapi/legislators.json');
+    return this.http.get('http://localhost:8080/api/billComments/' + billName, { headers: headers})
+    //https://api.iga.in.gov//2016/bills?per_page=2000
+    //return this.http.get('dapi/bills.json');
+  }
+
   getBillsLocal() : Observable<Response> {
 
     console.log('Getting Bills');
@@ -186,6 +201,23 @@ export class MyLocalIGADataService implements IMyIGADataService{
     //return this.http.get('dapi/bills.json');
   }
 
+  followBill(inUser: string, inbillName: string) {
+    console.log('Posting Bills' + JSON.stringify(inbillName));
+
+
+    var stuff = {user: inUser, billName: inbillName};
+
+    console.log('Thie stuff ' + stuff);
+
+
+    //this.republicanRepresentativeCount = 25;
+    var headers1 = new Headers();
+    //headers1.append('Accept', 'application/json');
+    headers1.append('Content-Type', 'application/json');
+    //return this.http.get('dapi/legislators.json');
+    return this.http.post('http://localhost:8080/api/followBill', JSON.stringify(stuff) , {headers: headers1});
+
+  }
   postBill(inBill: Bill) : Observable<Response> {
 
     console.log('Posting Bills' + JSON.stringify(inBill));
@@ -246,6 +278,37 @@ export class MyLocalIGADataService implements IMyIGADataService{
 
     return this.http.get(legLink, { headers: headers})
           .map (res =>  res.json());
+
+  }
+
+  followLegislator(inLeg : Legislator) {
+    console.log('making the call');
+
+
+        var stuff = {user: "Sheldon", legislatorID: inLeg._id };
+
+        console.log('Thie stuff ' + JSON.stringify(stuff));
+
+
+        //this.republicanRepresentativeCount = 25;
+        var headers1 = new Headers();
+        //headers1.append('Accept', 'application/json');
+        headers1.append('Content-Type', 'application/json');
+        //return this.http.get('dapi/legislators.json');
+        return this.http.post('http://localhost:8080/api/followLegislator', JSON.stringify(stuff) , {headers: headers1});
+  }
+
+  commentBill(inBill: Bill, inUser: string, inComment: string) {
+
+    var stuff = { user: inUser, billName: inBill.billName, comment: inComment };
+
+    console.log('Thie stuff ' + JSON.stringify(stuff));
+    //this.republicanRepresentativeCount = 25;
+    var headers1 = new Headers();
+    //headers1.append('Accept', 'application/json');
+    headers1.append('Content-Type', 'application/json');
+    //return this.http.get('dapi/legislators.json');
+    return this.http.post('http://localhost:8080/api/billComment', JSON.stringify(stuff) , {headers: headers1});
 
   }
 

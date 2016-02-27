@@ -2,7 +2,7 @@ System.register(['./Chamber', '../../node_modules/rx/dist/rx.all.js'], function(
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var Chamber_1;
-    var IBill, Bill, CountInfo, StaticBill;
+    var IBill, BillComment, Bill, CountInfo, StaticBill;
     return {
         setters:[
             function (Chamber_1_1) {
@@ -17,6 +17,12 @@ System.register(['./Chamber', '../../node_modules/rx/dist/rx.all.js'], function(
                 return IBill;
             }());
             exports_1("IBill", IBill);
+            BillComment = (function () {
+                function BillComment() {
+                }
+                return BillComment;
+            }());
+            exports_1("BillComment", BillComment);
             Bill = (function () {
                 function Bill() {
                     this.authors = [];
@@ -25,6 +31,8 @@ System.register(['./Chamber', '../../node_modules/rx/dist/rx.all.js'], function(
                     this.cosponsors = [];
                     this.advisors = [];
                     this.motions = [];
+                    this.currentVersion = {};
+                    this.latestVersion = {};
                 }
                 return Bill;
             }());

@@ -20,7 +20,9 @@
 
                               <div class="row show-grid" >
                                   <div class="col-md-12" *ngFor="#bill of senateBills" style="height:280px">
+                                    <a [routerLink]="['/SenateBillDetails', {id: bill.billName}]">{{bill.billName}}</a>
 
+                                    <!-- <a [routerLink]="['/SenateBillDetails'] ,{id:bill._id}">{bill.billName}}</a> -->
 
                                   <h3>{{bill.billName}}</h3> <br>
 
@@ -45,7 +47,7 @@
                                             </button>
                                         </span>
                                     </div>
-                              
+
 
                                   </div>
 

@@ -1,4 +1,4 @@
-System.register(['angular2/core', '../services/MyLocalIGADataService', './app.legislatureimage', './app.legislatureimagesmall', 'rxjs/add/operator/map'], function(exports_1, context_1) {
+System.register(['angular2/core', '../services/MyLocalIGADataService', 'angular2/router', './app.legislatureimage', './app.legislatureimagesmall', 'rxjs/add/operator/map'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -13,7 +13,7 @@ System.register(['angular2/core', '../services/MyLocalIGADataService', './app.le
     var __param = (this && this.__param) || function (paramIndex, decorator) {
         return function (target, key) { decorator(target, key, paramIndex); }
     };
-    var core_1, MyLocalIGADataService_1, app_legislatureimage_1, app_legislatureimagesmall_1;
+    var core_1, MyLocalIGADataService_1, router_1, app_legislatureimage_1, app_legislatureimagesmall_1;
     var SenateBillsComponent;
     return {
         setters:[
@@ -22,6 +22,9 @@ System.register(['angular2/core', '../services/MyLocalIGADataService', './app.le
             },
             function (MyLocalIGADataService_1_1) {
                 MyLocalIGADataService_1 = MyLocalIGADataService_1_1;
+            },
+            function (router_1_1) {
+                router_1 = router_1_1;
             },
             function (app_legislatureimage_1_1) {
                 app_legislatureimage_1 = app_legislatureimage_1_1;
@@ -49,7 +52,7 @@ System.register(['angular2/core', '../services/MyLocalIGADataService', './app.le
                         selector: 'senatebills'
                     }),
                     core_1.View({
-                        directives: [app_legislatureimage_1.LegislatureImage, app_legislatureimagesmall_1.LegislatureImageSmall],
+                        directives: [app_legislatureimage_1.LegislatureImage, app_legislatureimagesmall_1.LegislatureImageSmall, router_1.RouterLink, router_1.ROUTER_DIRECTIVES],
                         templateUrl: 'senatebills.html'
                     }),
                     __param(0, core_1.Inject(MyLocalIGADataService_1.MyLocalIGADataService)), 

@@ -105,11 +105,25 @@ System.register(['angular2/http', 'angular2/core', 'rxjs/subject/ReplaySubject',
                     headers.append('Authorization', this.myToken);
                     return this.http.get('https://api.iga.in.gov/2016/bills?per_page=2000', { headers: headers });
                 };
+                MyLocalIGADataService.prototype.getBillComments = function (billName) {
+                    console.log('Getting Bill Comments for ' + billName);
+                    var headers = new http_1.Headers();
+                    headers.append('Accept', 'application/json');
+                    return this.http.get('http://localhost:8080/api/billComments/' + billName, { headers: headers });
+                };
                 MyLocalIGADataService.prototype.getBillsLocal = function () {
                     console.log('Getting Bills');
                     var headers = new http_1.Headers();
                     headers.append('Accept', 'application/json');
                     return this.http.get('http://localhost:8080/api/bills', { headers: headers });
+                };
+                MyLocalIGADataService.prototype.followBill = function (inUser, inbillName) {
+                    console.log('Posting Bills' + JSON.stringify(inbillName));
+                    var stuff = { user: inUser, billName: inbillName };
+                    console.log('Thie stuff ' + stuff);
+                    var headers1 = new http_1.Headers();
+                    headers1.append('Content-Type', 'application/json');
+                    return this.http.post('http://localhost:8080/api/followBill', JSON.stringify(stuff), { headers: headers1 });
                 };
                 MyLocalIGADataService.prototype.postBill = function (inBill) {
                     console.log('Posting Bills' + JSON.stringify(inBill));
@@ -139,6 +153,21 @@ System.register(['angular2/http', 'angular2/core', 'rxjs/subject/ReplaySubject',
                     var legLink = 'https://api.iga.in.gov' + link;
                     return this.http.get(legLink, { headers: headers })
                         .map(function (res) { return res.json(); });
+                };
+                MyLocalIGADataService.prototype.followLegislator = function (inLeg) {
+                    console.log('making the call');
+                    var stuff = { user: "Sheldon", legislatorID: inLeg._id };
+                    console.log('Thie stuff ' + JSON.stringify(stuff));
+                    var headers1 = new http_1.Headers();
+                    headers1.append('Content-Type', 'application/json');
+                    return this.http.post('http://localhost:8080/api/followLegislator', JSON.stringify(stuff), { headers: headers1 });
+                };
+                MyLocalIGADataService.prototype.commentBill = function (inBill, inUser, inComment) {
+                    var stuff = { user: inUser, billName: inBill.billName, comment: inComment };
+                    console.log('Thie stuff ' + JSON.stringify(stuff));
+                    var headers1 = new http_1.Headers();
+                    headers1.append('Content-Type', 'application/json');
+                    return this.http.post('http://localhost:8080/api/billComment', JSON.stringify(stuff), { headers: headers1 });
                 };
                 MyLocalIGADataService.prototype.getLegislatorImage = function (link) {
                     var headers = new http_1.Headers();

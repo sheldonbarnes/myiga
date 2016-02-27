@@ -22,6 +22,7 @@
 
                               <div class="row show-grid" *ngIf="senateLegislators1.length>=40">
                                   <div class="col-md-2" *ngFor="#legislator of senateLegislators1">
+<<<<<<< HEAD
                                   <a [routerLink]="['/LegislatorDetails', {id: legislator._id}]">
                                     <center>
                                       <legimg [link]="legislator.pngDownloadLink"></legimg> <br>
@@ -30,6 +31,14 @@
                                       <button class="btn btn-primary">Follow Senator</button>
                                     </center>
                                   </a>
+=======
+                                  <center>
+                                  <legimg [link]="legislator.pngDownloadLink"></legimg> <br>
+                                  <!--{{legislator.firstName}}-->Sen {{legislator.firstName}} (R) <br>
+                                  <!-- {{legislator.party}} --> <br>
+                                  <button class="btn btn-primary" (click)="followLegislator(legislator)">Follow Senator</button>
+                                </center>
+>>>>>>> sheldonbarnes/master
                                   </div>
 
                               </div>
@@ -37,6 +46,7 @@
 
                               <div class="row show-grid"  *ngIf="senateDemocrats.length>=9">
                                   <div class="col-md-2" *ngFor="#dems of senateDemocrats">
+<<<<<<< HEAD
                                     <a [routerLink]="['/LegislatorDetails', {id: dems._id}]">
                                       <center>
                                         <legimg [link]="dems.pngDownloadLink"></legimg> <br>
@@ -46,6 +56,15 @@
                                         <button class="btn btn-primary">Follow Senator</button>
                                       </center>
                                     </a>
+=======
+                                  <center>
+                                  <legimg [link]="dems.pngDownloadLink"></legimg> <br>
+                                  <!--{{dems.firstName}}--> Sen {{dems.lastName}} (D) <br>
+                                <!--  {{dems.party}} -->
+                                  <br>
+                                  <button class="btn btn-primary" (click)="followLegislator(dems)">Follow Senator</button>
+                                </center>
+>>>>>>> sheldonbarnes/master
                                   </div>
 
                               </div>

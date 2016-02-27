@@ -61,6 +61,20 @@ export class SenateLegislatorsComponent {
 
   public senateLegislators1 : Legislator[] = [];
   public senateDemocrats : Legislator[] = [];
+
+
+
+  followLegislator(inLeg: Legislator) {
+    console.log('FOLLOWING ' + JSON.stringify(inLeg));
+
+    this.dataService.followLegislator(inLeg)
+    .map( res => res.json())
+    .subscribe ( x => {
+       inLeg.isFollowed = true;
+       console.log(JSON.stringify('asdasd ' + inLeg))
+    });
+
+  }
   constructor(@Inject(MyLocalIGADataService) public dataService: IMyIGADataService) {
     //console.log(this.chambername);
 

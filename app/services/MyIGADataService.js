@@ -67,6 +67,10 @@ System.register(['angular2/http', 'angular2/core', 'rxjs/Observable', 'rxjs/subj
                     this.legislators.filter(function (x) { return x.chamber.name == 'Senate'; })
                         .subscribe(function (x) { return _this.senators.push(x); });
                 }
+                MyIGADataService.prototype.followLegislator = function (inLeg) {
+                };
+                MyIGADataService.prototype.followBill = function (inUser, inbillName) {
+                };
                 MyIGADataService.prototype.getSessions = function () { };
                 MyIGADataService.prototype.getConstitution = function () { };
                 MyIGADataService.prototype.getChambers = function () {

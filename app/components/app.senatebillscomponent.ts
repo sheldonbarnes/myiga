@@ -5,6 +5,7 @@ import {MyLocalIGADataService} from '../services/MyLocalIGADataService';
 import {IMyIGADataService} from '../models/IMyIGADataService';
 import {Legislator} from '../models/Legislator';
 import {Bill, IBill} from '../models/Bill';
+import { RouterLink, ROUTER_DIRECTIVES,RouteConfig } from 'angular2/router';
 
 import {LegislatureImage} from './app.legislatureimage';
 import {LegislatureImageSmall} from './app.legislatureimagesmall';
@@ -19,7 +20,7 @@ import  'rxjs/add/operator/map';
 
 @View({
 
-    directives : [LegislatureImage, LegislatureImageSmall],
+    directives : [LegislatureImage, LegislatureImageSmall, RouterLink, ROUTER_DIRECTIVES ],
     templateUrl: 'senatebills.html'
 })
 
