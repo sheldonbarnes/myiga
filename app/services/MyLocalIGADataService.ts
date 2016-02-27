@@ -13,16 +13,9 @@ import {StaticBill} from '../models/Bill';
 
 import {IBill} from '../models/Bill';
 import {MyToken} from './MyToken';
-import {AsapScheduler} from 'rxjs/scheduler/AsapScheduler';
-import {QueueScheduler} from 'rxjs/scheduler/QueueScheduler';
+
 import  '../../node_modules/rx/dist/rx.all.js';
 
-import  'rxjs/add/operator/map';
-import  'rxjs/add/operator/count';
-import  'rxjs/add/operator/filter';
-import  'rxjs/add/operator/observeOn';
-import  'rxjs/add/observable/from';
-import  'rxjs/add/observable/fromArray';
 
 @Injectable()
 export class MyLocalIGADataService implements IMyIGADataService{

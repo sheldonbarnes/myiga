@@ -7,24 +7,20 @@ import  'rxjs/add/operator/map';
 
 
 @Component({
-    selector: 'legimg'
+    selector: 'legimg1'
 })
 
 @View({
 
     template:
     `
-
-
-
-    <img src="http://iga.in.gov/legislative/2016/portraits/{{ link }}" style="border-radius:55%" width=100 height=80>
-
+    <img src="http://iga.in.gov/legislative/2016/portraits/{{ link }}" style="border-radius:55%" width=40 height=30 alt="Cool Guy">
     `
 })
 
 
 
-export class LegislatureImage {
+export class LegislatureImageSmall {
 
   public image: any;
   public labels: any[];
@@ -37,7 +33,7 @@ export class LegislatureImage {
   }
 
   ngOnInit() {
-    console.log(JSON.stringify(this.link) + 'is the link received');
+
     this.link = this.link.replace("/2016/legislators/","legislator_");
     this.link = this.link.replace("?format=png","");
 

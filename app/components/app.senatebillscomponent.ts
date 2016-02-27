@@ -2,10 +2,13 @@ import {Component, View, Inject, Input} from 'angular2/core';
 import {CORE_DIRECTIVES} from 'angular2/angular2';
 import {MyIGADataService} from '../services/MyIGADataService';
 import {MyLocalIGADataService} from '../services/MyLocalIGADataService';
+import {IMyIGADataService} from '../models/IMyIGADataService';
 import {Legislator} from '../models/Legislator';
 import {Bill, IBill} from '../models/Bill';
 
 import {LegislatureImage} from './app.legislatureimage';
+import {LegislatureImageSmall} from './app.legislatureimagesmall';
+
 import {Observable} from 'rxjs/Observable';
 import  'rxjs/add/operator/map';
 
@@ -16,7 +19,7 @@ import  'rxjs/add/operator/map';
 
 @View({
 
-    directives : [LegislatureImage],
+    directives : [LegislatureImage, LegislatureImageSmall],
     templateUrl: 'senatebills.html'
 })
 
@@ -25,7 +28,14 @@ export class SenateBillsComponent {
 
   public senateLegislators1 : Legislator[] = [];
   public senateBills : Bill[] = [];
-  constructor(@Inject(MyLocalIGADataService) public dataService: MyIGADataService) {
+  constructor(@Inject(MyLocalIGADataService) public dataService: IMyIGADataService) {
+
+
+    dataService.billsList
+    //.mergeAll()
+    .filter(bill => bill.originChamber == 'senate')
+    //.subscribe(x => console.log(JSON.stringify(x) + ' is some of them'));
+  .subscribe(x => this.senateBills.push(x));
 
 /*uncomment to refresh data
     dataService.billsList

@@ -2,6 +2,7 @@ import {Component, View, Inject, Directive, ElementRef, Renderer} from 'angular2
 import {CORE_DIRECTIVES} from 'angular2/angular2';
 import {MyIGADataService} from '../services/MyIGADataService';
 import {MyLocalIGADataService} from '../services/MyLocalIGADataService';
+import {IMyIGADataService} from '../models/IMyIGADataService';
 import {Legislator} from '../models/Legislator';
 import {Bill} from '../models/Bill';
 import {IBill} from '../models/Bill';
@@ -53,9 +54,9 @@ export class HomeDashBoardComponent {
   public reps: Legislator[] = [];
   public mylegislators1: any;
   public republicanCount: number =0;
-  public houseBills: IBill[] = [];
-  public houseBillsList: IBill[] = [];
-  public senateBillsList: IBill[] = [];
+  public houseBills: Bill[] = [];
+  public houseBillsList: Bill[] = [];
+  public senateBillsList: Bill[] = [];
 
   public biPartisanBills : Bill[] = [];
 
@@ -76,7 +77,7 @@ export class HomeDashBoardComponent {
       return "timeline-inverted";
     }
   }
-  constructor(@Inject(MyLocalIGADataService) public dataService: MyIGADataService) {
+  constructor(@Inject(MyLocalIGADataService) public dataService: IMyIGADataService) {
     console.log('I am in the home dashboard controller');
 
     this.mylegislators = dataService.representatives;

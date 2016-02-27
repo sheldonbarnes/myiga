@@ -1,4 +1,4 @@
-System.register(['angular2/core', '../services/MyIGADataService', '../services/MyLocalIGADataService', './app.legislatureimage', './chart.directive', './chart.donutchart', 'angular2/router', './app.senatelegislatorscomponent', 'rxjs/add/operator/count', 'rxjs/add/operator/filter', 'rxjs/add/operator/mergeAll', 'rxjs/add/operator/merge', 'rxjs/add/operator/take', 'rxjs/add/observable/from', 'rxjs/add/observable/fromArray', 'rxjs/add/operator/map', 'rxjs/add/operator/zipAll'], function(exports_1) {
+System.register(['angular2/core', '../services/MyLocalIGADataService', './app.legislatureimage', './chart.directive', './chart.donutchart', 'angular2/router', './app.senatelegislatorscomponent', 'rxjs/add/operator/count', 'rxjs/add/operator/filter', 'rxjs/add/operator/mergeAll', 'rxjs/add/operator/merge', 'rxjs/add/operator/take', 'rxjs/add/observable/from', 'rxjs/add/observable/fromArray', 'rxjs/add/operator/map', 'rxjs/add/operator/zipAll'], function(exports_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -12,15 +12,12 @@ System.register(['angular2/core', '../services/MyIGADataService', '../services/M
     var __param = (this && this.__param) || function (paramIndex, decorator) {
         return function (target, key) { decorator(target, key, paramIndex); }
     };
-    var core_1, MyIGADataService_1, MyLocalIGADataService_1, app_legislatureimage_1, chart_directive_1, chart_donutchart_1, router_1, app_senatelegislatorscomponent_1;
+    var core_1, MyLocalIGADataService_1, app_legislatureimage_1, chart_directive_1, chart_donutchart_1, router_1, app_senatelegislatorscomponent_1;
     var HomeDashBoardComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (MyIGADataService_1_1) {
-                MyIGADataService_1 = MyIGADataService_1_1;
             },
             function (MyLocalIGADataService_1_1) {
                 MyLocalIGADataService_1 = MyLocalIGADataService_1_1;
@@ -109,7 +106,7 @@ System.register(['angular2/core', '../services/MyIGADataService', '../services/M
                         templateUrl: 'dashboard.html'
                     }),
                     __param(0, core_1.Inject(MyLocalIGADataService_1.MyLocalIGADataService)), 
-                    __metadata('design:paramtypes', [MyIGADataService_1.MyIGADataService])
+                    __metadata('design:paramtypes', [Object])
                 ], HomeDashBoardComponent);
                 return HomeDashBoardComponent;
             }());

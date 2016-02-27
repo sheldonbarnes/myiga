@@ -1,4 +1,4 @@
-System.register(['angular2/http', 'angular2/core', 'rxjs/subject/ReplaySubject', './MyToken', '../../node_modules/rx/dist/rx.all.js', 'rxjs/add/operator/map', 'rxjs/add/operator/count', 'rxjs/add/operator/filter', 'rxjs/add/operator/observeOn', 'rxjs/add/observable/from', 'rxjs/add/observable/fromArray'], function(exports_1) {
+System.register(['angular2/http', 'angular2/core', 'rxjs/subject/ReplaySubject', './MyToken', '../../node_modules/rx/dist/rx.all.js'], function(exports_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -25,13 +25,7 @@ System.register(['angular2/http', 'angular2/core', 'rxjs/subject/ReplaySubject',
             function (MyToken_1_1) {
                 MyToken_1 = MyToken_1_1;
             },
-            function (_1) {},
-            function (_2) {},
-            function (_3) {},
-            function (_4) {},
-            function (_5) {},
-            function (_6) {},
-            function (_7) {}],
+            function (_1) {}],
         execute: function() {
             MyLocalIGADataService = (function () {
                 function MyLocalIGADataService(http) {
