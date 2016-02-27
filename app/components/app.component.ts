@@ -18,6 +18,7 @@ import {SenateBillDetailsComponent} from './senatebilldetails';
 
 
 import {HomeDashBoardComponent} from './app.homedashboardcomponent';
+import {LegislatorDetailsComponent} from './app.legislatorsdetailscomponent';
 
 import  'rxjs/add/operator/count';
 import  'rxjs/add/operator/filter';
@@ -59,9 +60,16 @@ import {Observable} from 'rxjs/Observable';
     {path: '/SenateBills',
       as: 'SenateBills',
       component: SenateBillsComponent },
+<<<<<<< HEAD
       {path: '/SenateBillDetails/:id',
         as: 'SenateBillDetails',
         component: SenateBillDetailsComponent },
+=======
+    {path: '/LegislatorDetails/:id',
+      as: 'LegislatorDetails',
+      component: LegislatorDetailsComponent},
+
+>>>>>>> pr/1
     {path: '/Representatives',
       as: 'CustomerDetails',
       component: SenateLegislatorsComponent }

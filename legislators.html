@@ -1,15 +1,71 @@
-<h1>Hello World</h1>
+<div id="page-wrapper">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="page-header">{{salutation}} {{thisLegislator.firstName}} {{thisLegislator.lastName}} <img src="/images/{{ partyImage }}"/> </h1>
+      </div>
+    </div>
+  <div class="row">
+    <div class="col-xs-2">
+      <legimg [link]="thisLegislator.pngDownloadLink"></legimg>
+    </div>
+      <div class="row">
+        <a href="https://iga.in.gov/legislative/{{thisLegislator.link}}"><button class="btn btn-default">Website</button></a>
+        <button class="btn btn-primary">Follow </button>
+      </div>
+  </div>
+  <br>
+  <div class="row">
+      <div class="col-lg-12">
+          <div class="panel panel-default">
+
+              <h3>Bills Authored:</h3>
+            <div class="panel-body">
+
+              <div *ngFor="#bill of billsAuthored">
+                <div class="row">
+                  <div class="col-sm-2 h4">
+                    <p><a href="{{bill.link}}">{{bill.billName}}</a></p>
+                  </div>
+                  <div class="col-sm-10 h5">
+                    <p>{{bill.title}}</p>
+                  </div>
+                </div>
+              </div>
+
+            </div><!--<div class="panel-body">-->
+
+            <h3>Bills Co-Authored:</h3>
+
+            <div class="panel-body">
+              <div *ngFor="#bill of billsCoauthored">
+                <div class="row">
+                  <div class="col-sm-2 h4">
+                    <p><a href="{{bill.link}}">{{bill.billName}}</a></p>
+                  </div>
+                  <div class="col-sm-10 h5">
+                    <p>{{bill.title}}</p>
+                  </div>
+                </div>
+              </div>
+            </div><!--<div class="panel-body">-->
+
+            <h3>Bills Sponsored &amp; Co-Sponsored:</h3>
+            <div class="panel-body">
+              <div *ngFor="#bill of billsSponsored">
+                <div class="row">
+                  <div class="col-sm-2 h4">
+                    <p><a href="{{bill.link}}">{{bill.billName}}</a></p>
+                  </div>
+                  <div class="col-sm-10 h5">
+                    <p>{{bill.title}}</p>
+                  </div>
+                </div>
+              </div>
+            </div><!--<div class="panel-body">-->
+
+          </div><!-- <div class="panel panel-default"> -->
+        </div><!-- <div class="col-lg-12"> -->
+  </div>
 
 
-
-<table border=1>
-
-<tbody>
-  <tr><td>First Name</td><td>Last Name</td></tr>
-  <tr  *ngFor="#legislator of mylegislators">
-  <td>{{legislator.firstName}}</td>
-  <td>{{legislator.lastName}}</td>
-
-  </tr>
-</tbody>
-</table>
+</div>
