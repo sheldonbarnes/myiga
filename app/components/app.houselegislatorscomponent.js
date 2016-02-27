@@ -1,4 +1,4 @@
-System.register(['angular2/core', '../services/MyLocalIGADataService', './app.legislatureimage', 'rxjs/add/operator/map'], function(exports_1) {
+System.register(['angular2/core', '../services/MyLocalIGADataService', 'angular2/router', './app.legislatureimage', 'rxjs/add/operator/map'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -11,7 +11,7 @@ System.register(['angular2/core', '../services/MyLocalIGADataService', './app.le
     var __param = (this && this.__param) || function (paramIndex, decorator) {
         return function (target, key) { decorator(target, key, paramIndex); }
     };
-    var core_1, MyLocalIGADataService_1, app_legislatureimage_1;
+    var core_1, MyLocalIGADataService_1, router_1, app_legislatureimage_1;
     var HouseLegislatorsComponent;
     return {
         setters:[
@@ -20,6 +20,9 @@ System.register(['angular2/core', '../services/MyLocalIGADataService', './app.le
             },
             function (MyLocalIGADataService_1_1) {
                 MyLocalIGADataService_1 = MyLocalIGADataService_1_1;
+            },
+            function (router_1_1) {
+                router_1 = router_1_1;
             },
             function (app_legislatureimage_1_1) {
                 app_legislatureimage_1 = app_legislatureimage_1_1;
@@ -68,7 +71,7 @@ System.register(['angular2/core', '../services/MyLocalIGADataService', './app.le
                         selector: 'reps'
                     }),
                     core_1.View({
-                        directives: [app_legislatureimage_1.LegislatureImage],
+                        directives: [app_legislatureimage_1.LegislatureImage, router_1.RouterLink, router_1.ROUTER_DIRECTIVES],
                         templateUrl: 'reps.html'
                     }),
                     __param(0, core_1.Inject(MyLocalIGADataService_1.MyLocalIGADataService)), 

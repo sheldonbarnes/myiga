@@ -25,20 +25,30 @@ System.register(['angular2/core', '../services/MyIGADataService', 'rxjs/add/oper
                     this.dataService = dataService;
                 }
                 LegislatureImageSmall.prototype.ngOnInit = function () {
-                    console.log('I am in the leg image 1' + JSON.stringify(this.link));
+                    console.log('I am in the leg image 1' + JSON.stringify(this.legislator));
                     this.link = this.link.replace("/2016/legislators/", "legislator_");
                     this.link = this.link.replace("?format=png", "");
+                    if (this.legislator.party == 'Republican') {
+                        this.borderColor = "Red";
+                    }
+                    else {
+                        this.borderColor = "Blue";
+                    }
                 };
                 __decorate([
                     core_1.Input(), 
                     __metadata('design:type', Object)
                 ], LegislatureImageSmall.prototype, "link", void 0);
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Object)
+                ], LegislatureImageSmall.prototype, "legislator", void 0);
                 LegislatureImageSmall = __decorate([
                     core_1.Component({
                         selector: 'legimg1'
                     }),
                     core_1.View({
-                        template: "\n    <img src=\"http://iga.in.gov/legislative/2016/portraits/{{ link }}\" style=\"border-radius:55%\" width=40 height=30 alt=\"Cool Guy\">\n    "
+                        template: "\n    <img src=\"http://iga.in.gov/legislative/2016/portraits/{{ link }}\" width=40 height=30 alt=\"Cool Guy\" style=\"border-radius:55%;border:2px solid {{borderColor}};\">\n\n\n    "
                     }), 
                     __metadata('design:paramtypes', [MyIGADataService_1.MyIGADataService])
                 ], LegislatureImageSmall);

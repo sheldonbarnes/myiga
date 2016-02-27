@@ -33,7 +33,7 @@
                                   <div *ngIf = "bill.authors" *ngFor="#author of bill.authors">
                                     <!--<legimg  [link]="author.link"></legimg> -->
                                     <div *ngIf="author" style="float:left">
-                                      <legimg1  [link]="author.link"></legimg1>
+                                      <legimg1  [link]="author.link"  [legislator]="author"></legimg1>
                                       </div>
                                   </div>
                                   <br><br>

@@ -1,6 +1,6 @@
 System.register(['./Chamber', '../../node_modules/rx/dist/rx.all.js'], function(exports_1) {
     var Chamber_1;
-    var IBill, BillComment, Bill, CountInfo, StaticBill;
+    var IBill, BillComment, BillFollow, Bill, CountInfo, StaticBill;
     return {
         setters:[
             function (Chamber_1_1) {
@@ -21,6 +21,12 @@ System.register(['./Chamber', '../../node_modules/rx/dist/rx.all.js'], function(
                 return BillComment;
             })();
             exports_1("BillComment", BillComment);
+            BillFollow = (function () {
+                function BillFollow() {
+                }
+                return BillFollow;
+            })();
+            exports_1("BillFollow", BillFollow);
             Bill = (function () {
                 function Bill() {
                     this.authors = [];

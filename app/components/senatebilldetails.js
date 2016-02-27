@@ -41,6 +41,7 @@ System.register(['angular2/core', '../services/MyLocalIGADataService', '../model
                     this.dataService = dataService;
                     this.params = params;
                     this.thisBill = new Bill_1.Bill();
+                    this.inUser = "Sheldon";
                     this.comments = [];
                     this.dataService.billsList
                         .filter(function (bill) { return bill.billName == _this.params.get('id'); })
@@ -59,11 +60,20 @@ System.register(['angular2/core', '../services/MyLocalIGADataService', '../model
                     console.log('I am in the senate bills details component');
                 }
                 SenateBillDetailsComponent.prototype.commentBill = function (inBill) {
+                    var _this = this;
                     console.log(JSON.stringify(inBill));
                     console.log(this.inComment);
-                    this.dataService.commentBill(inBill, "Riker", this.inComment)
+                    this.dataService.commentBill(inBill, this.inUser, this.inComment)
                         .map(function (res) { return res.json(); })
                         .subscribe(function (x) { return console.log('This is the result from the API' + JSON.stringify(x)); });
+                    this.comments = [];
+                    this.dataService.getBillComments(inBill.billName)
+                        .map(function (res) { return res.json(); })
+                        .mergeAll()
+                        .subscribe(function (x) {
+                        console.log('These are the comments' + JSON.stringify(x));
+                        _this.comments.push(x);
+                    });
                 };
                 SenateBillDetailsComponent.prototype.followBill = function (billName) {
                     console.log('I am going to try to follow ' + billName);

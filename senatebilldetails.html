@@ -34,15 +34,15 @@
 
                                     <!-- <a [routerLink]="['/SenateBillDetails'] ,{id:bill._id}">{bill.billName}}</a> -->
                                     <h3>Authors and Coauthors</h3> <br>
-                                        <legimg1 *ngFor="#author of thisBill.authors" [link]="author.link"></legimg1>
+                                        <legimg1 *ngFor="#author of thisBill.authors" [link]="author.link" [legislator]="author"></legimg1>
                                         |
-                                        <legimg1 *ngFor="#author of thisBill.coauthors" [link]="author.link"></legimg1>
+                                        <legimg1 *ngFor="#author of thisBill.coauthors" [link]="author.link" [legislator]="author"> </legimg1>
 
 
                                   <h3>Sponsors and CoSponsors</h3> <br>
-                                       <legimg1 *ngFor="#author of thisBill.sponsors" [link]="author.link"></legimg1>
+                                       <legimg1 *ngFor="#author of thisBill.sponsors" [link]="author.link" [legislator]="author"></legimg1>
                                         |
-                                       <legimg1 *ngFor="#author of thisBill.cosponsors" [link]="author.link"></legimg1>
+                                       <legimg1 *ngFor="#author of thisBill.cosponsors" [link]="author.link" [legislator]="author"></legimg1>
                                        <br>
 
 
@@ -106,7 +106,7 @@
                                 </div>
                                     <br> <br>
                                     <div class="input-group col-md-6">
-                                      <input type="text" [(ngModel)]="inUser"> 
+                                      <input type="text" [(ngModel)]="inUser">
                                         <input id="btn-input" type="text" [(ngModel)]="inComment" class="form-control input-sm" placeholder="Type your message here..." />
                                         <span class="input-group-btn">
                                             <button class="btn btn-warning btn-sm" id="btn-chat" (click)="commentBill(thisBill)">
