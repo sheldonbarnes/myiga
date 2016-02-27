@@ -50,7 +50,7 @@ export class MyIGADataService implements IMyIGADataService{
   public legislators: ReplaySubject<Legislator> = new ReplaySubject<Legislator>();
   public bills: ReplaySubject<Bill> = new ReplaySubject<Bill>();
   public biPartisanBills: ReplaySubject<Bill> = new ReplaySubject<Bill>();
-  public billsList: ReplaySubject<IBill> = new ReplaySubject<IBill>();
+  public billsList: ReplaySubject<Bill> = new ReplaySubject<Bill>();
   public legislatorsList: ReplaySubject<Legislator> = new ReplaySubject<Legislator>();
   public biPartisanBills1: Bill[] = [];
   public bills1: Bill[] = [];

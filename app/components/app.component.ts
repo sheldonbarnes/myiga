@@ -11,6 +11,7 @@ import {DonutChart} from './chart.donutchart';
 import { RouterLink, ROUTER_DIRECTIVES,RouteConfig } from 'angular2/router';
 
 import {SenateLegislatorsComponent} from './app.senatelegislatorscomponent';
+import {HouseLegislatorsComponent} from './app.houselegislatorscomponent';
 import {SenateBillsComponent} from './app.senatebillscomponent';
 import {HomeDashBoardComponent} from './app.homedashboardcomponent';
 
@@ -48,6 +49,9 @@ import {Observable} from 'rxjs/Observable';
   {path: '/SenateSenators',
     as: 'SenateSenators',
     component: SenateLegislatorsComponent },
+    {path: '/HouseRepresentatives',
+      as: 'HouseRepresentatives',
+      component: HouseLegislatorsComponent },
     {path: '/SenateBills',
       as: 'SenateBills',
       component: SenateBillsComponent },

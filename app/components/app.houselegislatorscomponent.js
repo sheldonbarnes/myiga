@@ -13,7 +13,7 @@ System.register(['angular2/core', '../services/MyLocalIGADataService', './app.le
         return function (target, key) { decorator(target, key, paramIndex); }
     };
     var core_1, MyLocalIGADataService_1, app_legislatureimage_1;
-    var SenateLegislatorsComponent;
+    var HouseLegislatorsComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -27,8 +27,8 @@ System.register(['angular2/core', '../services/MyLocalIGADataService', './app.le
             },
             function (_1) {}],
         execute: function() {
-            SenateLegislatorsComponent = (function () {
-                function SenateLegislatorsComponent(dataService) {
+            HouseLegislatorsComponent = (function () {
+                function HouseLegislatorsComponent(dataService) {
                     var _this = this;
                     this.dataService = dataService;
                     this.senateLegislators = [];
@@ -38,13 +38,13 @@ System.register(['angular2/core', '../services/MyLocalIGADataService', './app.le
                     console.log('This is the beginning of the constructor for SenateLegislatorsComponent ');
                     dataService.legislators
                         .mergeAll()
-                        .filter(function (leg) { return leg.party == "Democratic" && leg.chamber.name == "Senate"; })
+                        .filter(function (leg) { return leg.party == "Democratic" && leg.chamber.name == "House"; })
                         .subscribe(function (x) { return _this.senateDemocrats.push(x); });
                     dataService.legislators
                         .mergeAll()
-                        .filter(function (leg) { return leg.party == "Republican" && leg.chamber.name == "Senate"; })
+                        .filter(function (leg) { return leg.party == "Republican" && leg.chamber.name == "House"; })
                         .subscribe(function (x) {
-                        console.log('Pushing from the SenateLegislatorsComponent');
+                        console.log('Pushing from the HouseLegislatorsComponent');
                         _this.senateLegislators1.push(x);
                     }, function (err) {
                         console.log(err);
@@ -53,32 +53,32 @@ System.register(['angular2/core', '../services/MyLocalIGADataService', './app.le
                     });
                     console.log(dataService.senators.length + ' is the length');
                 }
-                SenateLegislatorsComponent.prototype.ngOnInit = function () {
+                HouseLegislatorsComponent.prototype.ngOnInit = function () {
                     console.log(this.dataService.senators.length + ' is the length');
                 };
                 __decorate([
                     core_1.Input(), 
                     __metadata('design:type', Array)
-                ], SenateLegislatorsComponent.prototype, "senateLegislators", void 0);
+                ], HouseLegislatorsComponent.prototype, "senateLegislators", void 0);
                 __decorate([
                     core_1.Input(), 
                     __metadata('design:type', String)
-                ], SenateLegislatorsComponent.prototype, "chambername", void 0);
-                SenateLegislatorsComponent = __decorate([
+                ], HouseLegislatorsComponent.prototype, "chambername", void 0);
+                HouseLegislatorsComponent = __decorate([
                     core_1.Component({
-                        selector: 'senators'
+                        selector: 'reps'
                     }),
                     core_1.View({
                         directives: [app_legislatureimage_1.LegislatureImage],
-                        templateUrl: 'senators.html'
+                        templateUrl: 'reps.html'
                     }),
                     __param(0, core_1.Inject(MyLocalIGADataService_1.MyLocalIGADataService)), 
                     __metadata('design:paramtypes', [Object])
-                ], SenateLegislatorsComponent);
-                return SenateLegislatorsComponent;
+                ], HouseLegislatorsComponent);
+                return HouseLegislatorsComponent;
             }());
-            exports_1("SenateLegislatorsComponent", SenateLegislatorsComponent);
+            exports_1("HouseLegislatorsComponent", HouseLegislatorsComponent);
         }
     }
 });
-//# sourceMappingURL=app.senatelegislatorscomponent.js.map
+//# sourceMappingURL=app.houselegislatorscomponent.js.map

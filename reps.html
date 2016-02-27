@@ -13,20 +13,21 @@
               <div class="row">
                   <div class="col-lg-12">
                       <div class="panel panel-default">
-                        <h3>Indiana Senate</h3>
+                        <h3>Indiana House</h3>
                         <p>
-                            The Indiana Senate is the upper house of the Indiana General Assembly, the state legislature of the U.S. state of Indiana. The Senate is composed of 50 members representing an equal number of constituent districts. Senators serve four-year terms without term limits.</p>
+                          The Indiana House of Representatives is the lower house of the Indiana General Assembly, the state legislature of the United States state of Indiana. The House is composed of 100 members representing an equal number of constituent districts. House members serve two-year terms without term limits
+                          </p>
                           <div class="panel-body">
                             <p *ngIf="senateLegislators1.length<40"><img src="loading.gif">Loading</p>
-                            <h3 *ngIf="senateLegislators1.length>=40">Republicans {{senateLegislators1.length}}</h3>
+                            <h3 *ngIf="senateLegislators1.length>=40">Republicans ({{senateLegislators1.length}})</h3>
 
                               <div class="row show-grid" *ngIf="senateLegislators1.length>=40">
                                   <div class="col-md-2" *ngFor="#legislator of senateLegislators1">
                                   <center>
                                   <legimg [link]="legislator.pngDownloadLink"></legimg> <br>
-                                  <!--{{legislator.firstName}}-->Sen {{legislator.lastName}} (R) <br>
+                                  <!--{{legislator.firstName}}--> Rep {{legislator.lastName}} (R) <br>
                                   <!-- {{legislator.party}} --> <br>
-                                  <button class="btn btn-primary">Follow Senator</button>
+                                  <button class="btn btn-primary">Follow Rep</button>
                                 </center>
                                   </div>
 
@@ -37,10 +38,10 @@
                                   <div class="col-md-2" *ngFor="#dems of senateDemocrats">
                                   <center>
                                   <legimg [link]="dems.pngDownloadLink"></legimg> <br>
-                                  <!--{{dems.firstName}}--> Sen {{dems.lastName}} (D) <br>
+                                  <!--{{dems.firstName}}-->Rep {{dems.lastName}} (D) <br>
                                 <!--  {{dems.party}} -->
                                   <br>
-                                  <button class="btn btn-primary">Follow Senator</button>
+                                  <button class="btn btn-primary">Follow Rep</button>
                                 </center>
                                   </div>
 

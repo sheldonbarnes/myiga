@@ -10,7 +10,7 @@ System.register(['angular2/core', '../services/MyIGADataService', 'rxjs/add/oper
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, MyIGADataService_1;
-    var LegislatureImage;
+    var LegislatureImageSmall;
     return {
         setters:[
             function (core_1_1) {
@@ -21,32 +21,31 @@ System.register(['angular2/core', '../services/MyIGADataService', 'rxjs/add/oper
             },
             function (_1) {}],
         execute: function() {
-            LegislatureImage = (function () {
-                function LegislatureImage(dataService) {
+            LegislatureImageSmall = (function () {
+                function LegislatureImageSmall(dataService) {
                     this.dataService = dataService;
                 }
-                LegislatureImage.prototype.ngOnInit = function () {
-                    console.log(JSON.stringify(this.link) + 'is the link received');
+                LegislatureImageSmall.prototype.ngOnInit = function () {
                     this.link = this.link.replace("/2016/legislators/", "legislator_");
                     this.link = this.link.replace("?format=png", "");
                 };
                 __decorate([
                     core_1.Input(), 
                     __metadata('design:type', Object)
-                ], LegislatureImage.prototype, "link", void 0);
-                LegislatureImage = __decorate([
+                ], LegislatureImageSmall.prototype, "link", void 0);
+                LegislatureImageSmall = __decorate([
                     core_1.Component({
-                        selector: 'legimg'
+                        selector: 'legimg1'
                     }),
                     core_1.View({
-                        template: "\n\n\n\n    <img src=\"http://iga.in.gov/legislative/2016/portraits/{{ link }}\" style=\"border-radius:55%\" width=100 height=80>\n\n    "
+                        template: "\n    <img src=\"http://iga.in.gov/legislative/2016/portraits/{{ link }}\" style=\"border-radius:55%\" width=40 height=30 alt=\"Cool Guy\">\n    "
                     }), 
                     __metadata('design:paramtypes', [MyIGADataService_1.MyIGADataService])
-                ], LegislatureImage);
-                return LegislatureImage;
+                ], LegislatureImageSmall);
+                return LegislatureImageSmall;
             }());
-            exports_1("LegislatureImage", LegislatureImage);
+            exports_1("LegislatureImageSmall", LegislatureImageSmall);
         }
     }
 });
-//# sourceMappingURL=app.legislatureimage.js.map
+//# sourceMappingURL=app.legislatureimagesmall.js.map

@@ -17,13 +17,36 @@
                         <p>
                             The Indiana Senate is the upper house of the Indiana General Assembly, the state legislature of the U.S. state of Indiana. The Senate is composed of 50 members representing an equal number of constituent districts. Senators serve four-year terms without term limits.</p>
                           <div class="panel-body">
-                    
-                              <div class="row show-grid">
-                                  <div class="col-md-2" *ngFor="#bill of senateBills">
-                                  <center>
 
-                                  {{bill.billName}}  <br>
-                                </center>
+                              <div class="row show-grid" >
+                                  <div class="col-md-12" *ngFor="#bill of senateBills" style="height:280px">
+
+
+                                  <h3>{{bill.billName}}</h3> <br>
+
+                                  {{bill.title}} <br> <br>
+
+                                  <div *ngIf = "bill.authors" *ngFor="#author of bill.authors">
+                                    <!--<legimg  [link]="author.link"></legimg> -->
+                                    <div *ngIf="author" style="float:left">
+                                      <legimg1  [link]="author.link"></legimg1>
+                                      </div>
+                                  </div>
+                                  <br><br>
+                                <i class="fa fa-thumbs-up"></i>
+                                <i class="fa fa-thumbs-down"></i>
+                              <i class="fa fa-rss"></i>
+                                    <br> <br>
+                                    <div class="input-group col-md-6">
+                                        <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-warning btn-sm" id="btn-chat">
+                                                Comment
+                                            </button>
+                                        </span>
+                                    </div>
+                              
+
                                   </div>
 
                               </div>

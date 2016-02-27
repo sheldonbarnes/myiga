@@ -1,4 +1,4 @@
-System.register(['angular2/core', '../services/MyIGADataService', '../services/MyLocalIGADataService', './app.legislatureimage', 'rxjs/add/operator/map'], function(exports_1) {
+System.register(['angular2/core', '../services/MyLocalIGADataService', './app.legislatureimage', './app.legislatureimagesmall', 'rxjs/add/operator/map'], function(exports_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -12,15 +12,12 @@ System.register(['angular2/core', '../services/MyIGADataService', '../services/M
     var __param = (this && this.__param) || function (paramIndex, decorator) {
         return function (target, key) { decorator(target, key, paramIndex); }
     };
-    var core_1, MyIGADataService_1, MyLocalIGADataService_1, app_legislatureimage_1;
+    var core_1, MyLocalIGADataService_1, app_legislatureimage_1, app_legislatureimagesmall_1;
     var SenateBillsComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (MyIGADataService_1_1) {
-                MyIGADataService_1 = MyIGADataService_1_1;
             },
             function (MyLocalIGADataService_1_1) {
                 MyLocalIGADataService_1 = MyLocalIGADataService_1_1;
@@ -28,13 +25,20 @@ System.register(['angular2/core', '../services/MyIGADataService', '../services/M
             function (app_legislatureimage_1_1) {
                 app_legislatureimage_1 = app_legislatureimage_1_1;
             },
+            function (app_legislatureimagesmall_1_1) {
+                app_legislatureimagesmall_1 = app_legislatureimagesmall_1_1;
+            },
             function (_1) {}],
         execute: function() {
             SenateBillsComponent = (function () {
                 function SenateBillsComponent(dataService) {
+                    var _this = this;
                     this.dataService = dataService;
                     this.senateLegislators1 = [];
                     this.senateBills = [];
+                    dataService.billsList
+                        .filter(function (bill) { return bill.originChamber == 'senate'; })
+                        .subscribe(function (x) { return _this.senateBills.push(x); });
                     console.log('I am in the senate bills component');
                 }
                 SenateBillsComponent.prototype.ngOnInit = function () {
@@ -44,11 +48,11 @@ System.register(['angular2/core', '../services/MyIGADataService', '../services/M
                         selector: 'senatebills'
                     }),
                     core_1.View({
-                        directives: [app_legislatureimage_1.LegislatureImage],
+                        directives: [app_legislatureimage_1.LegislatureImage, app_legislatureimagesmall_1.LegislatureImageSmall],
                         templateUrl: 'senatebills.html'
                     }),
                     __param(0, core_1.Inject(MyLocalIGADataService_1.MyLocalIGADataService)), 
-                    __metadata('design:paramtypes', [MyIGADataService_1.MyIGADataService])
+                    __metadata('design:paramtypes', [Object])
                 ], SenateBillsComponent);
                 return SenateBillsComponent;
             }());

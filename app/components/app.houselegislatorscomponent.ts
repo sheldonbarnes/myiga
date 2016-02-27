@@ -6,19 +6,18 @@ import {IMyIGADataService} from '../models/IMyIGADataService';
 import {Legislator} from '../models/Legislator';
 
 import {LegislatureImage} from './app.legislatureimage';
-
 import {Observable} from 'rxjs/Observable';
 import  'rxjs/add/operator/map';
 
 
 @Component({
-    selector: 'senators'
+    selector: 'reps'
 })
 
 @View({
 
     directives : [LegislatureImage],
-    templateUrl: 'senators.html'
+    templateUrl: 'reps.html'
 /*
     template:
     `
@@ -53,7 +52,7 @@ import  'rxjs/add/operator/map';
 })
 
 
-export class SenateLegislatorsComponent {
+export class HouseLegislatorsComponent {
 
   @Input() senateLegislators: Legislator[] = [];
   @Input() chambername: string = "";
@@ -68,15 +67,15 @@ export class SenateLegislatorsComponent {
 
     dataService.legislators
     .mergeAll()
-    .filter(leg => leg.party == "Democratic" && leg.chamber.name == "Senate")
+    .filter(leg => leg.party == "Democratic" && leg.chamber.name == "House")
     .subscribe(x=> this.senateDemocrats.push(x));
 
     dataService.legislators
     .mergeAll()
-    .filter(leg => leg.party == "Republican" && leg.chamber.name == "Senate")
+    .filter(leg => leg.party == "Republican" && leg.chamber.name == "House")
     .subscribe(x=>
       {
-        console.log('Pushing from the SenateLegislatorsComponent');
+        console.log('Pushing from the HouseLegislatorsComponent');
         this.senateLegislators1.push(x);
         //console.log(this.senateLegislators1.length);
       },
