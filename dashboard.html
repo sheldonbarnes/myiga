@@ -169,19 +169,23 @@
 <!-- /.panel -->
           <div class="panel panel-default">
               <div class="panel-heading">
-                  <i class="fa fa-clock-o fa-fw"></i> Notifications
+                  <i class="fa fa-clock-o fa-fw"></i> Followed Bills {{followedBills.length}}
               </div>
               <!-- /.panel-heading -->
               <div class="panel-body">
                   <ul class="timeline" >
-                      <li *ngFor="#legislator of senators1; #i=index" [class]="getClass(i)">
+                      <li *ngFor="#bill of followedBills">
                           <div class="timeline-badge" ><i class="fa fa-book"></i>
                           </div>
                           <div class="timeline-panel" >
                               <div class="timeline-heading">
-                                <legimg [link] = "legislator.pngDownloadLink"> </legimg>
                                 <br>
-                                  <h4 class="timeline-title">{{legislator.position_title}} {{legislator.firstName}} {{legislator.lastName}} introduced a bill</h4>
+                                  <h4 class="timeline-title">
+                                    <a [routerLink]="['/SenateBillDetails', {id: bill.billName}]">
+
+                                    {{bill.billName}}
+                                  </a>
+                                  </h4>
                                   <p><small class="text-muted"><i class="fa fa-clock-o"></i> 11 hours ago via Twitter</small>
                                   </p>
                               </div>

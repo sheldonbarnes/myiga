@@ -23,12 +23,14 @@
 
                               <div class="row show-grid" *ngIf="senateLegislators1.length>=40">
                                   <div class="col-md-2" *ngFor="#legislator of senateLegislators1">
+                                            <a [routerLink]="['/LegislatorDetails', {id: legislator._id}]">
                                   <center>
                                   <legimg [link]="legislator.pngDownloadLink"></legimg> <br>
                                   <!--{{legislator.firstName}}--> Rep {{legislator.lastName}} (R) <br>
                                   <!-- {{legislator.party}} --> <br>
                                   <button class="btn btn-primary">Follow Rep</button>
                                 </center>
+                              </a>
                                   </div>
 
                               </div>
@@ -36,6 +38,9 @@
 
                               <div class="row show-grid"  *ngIf="senateDemocrats.length>=9">
                                   <div class="col-md-2" *ngFor="#dems of senateDemocrats">
+
+                                    <a [routerLink]="['/LegislatorDetails', {id: dems._id}]">
+
                                   <center>
                                   <legimg [link]="dems.pngDownloadLink"></legimg> <br>
                                   <!--{{dems.firstName}}-->Rep {{dems.lastName}} (D) <br>
@@ -43,6 +48,7 @@
                                   <br>
                                   <button class="btn btn-primary">Follow Rep</button>
                                 </center>
+                              </a>
                                   </div>
 
                               </div>

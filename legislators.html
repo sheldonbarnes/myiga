@@ -24,7 +24,12 @@
               <div *ngFor="#bill of billsAuthored">
                 <div class="row">
                   <div class="col-sm-2 h4">
-                    <p><a href="{{bill.link}}">{{bill.billName}}</a></p>
+                    <p>
+
+                      <a [routerLink]="['/SenateBillDetails', {id: bill.billName}]">
+                        {{bill.billName}}
+
+                      </a></p>
                   </div>
                   <div class="col-sm-10 h5">
                     <p>{{bill.title}}</p>
@@ -40,7 +45,13 @@
               <div *ngFor="#bill of billsCoauthored">
                 <div class="row">
                   <div class="col-sm-2 h4">
-                    <p><a href="{{bill.link}}">{{bill.billName}}</a></p>
+                    <p>
+
+                      <a [routerLink]="['/SenateBillDetails', {id: bill.billName}]">
+                        {{bill.billName}}
+                      </a>
+                    </p>
+
                   </div>
                   <div class="col-sm-10 h5">
                     <p>{{bill.title}}</p>
@@ -54,7 +65,11 @@
               <div *ngFor="#bill of billsSponsored">
                 <div class="row">
                   <div class="col-sm-2 h4">
-                    <p><a href="{{bill.link}}">{{bill.billName}}</a></p>
+
+                    <p>
+                        <a [routerLink]="['/SenateBillDetails', {id: bill.billName}]">
+
+                        {{bill.billName}}</a></p>
                   </div>
                   <div class="col-sm-10 h5">
                     <p>{{bill.title}}</p>

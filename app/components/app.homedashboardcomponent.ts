@@ -4,7 +4,7 @@ import {MyIGADataService} from '../services/MyIGADataService';
 import {MyLocalIGADataService} from '../services/MyLocalIGADataService';
 import {IMyIGADataService} from '../models/IMyIGADataService';
 import {Legislator} from '../models/Legislator';
-import {Bill} from '../models/Bill';
+import {Bill,BillComment, BillFollow} from '../models/Bill';
 import {IBill} from '../models/Bill';
 import {StaticBill} from '../models/Bill';
 
@@ -65,6 +65,9 @@ export class HomeDashBoardComponent {
 
   public senateRepublicansList: Legislator[] = [];
   public senateDemocratsList: Legislator[] = [];
+  public followedBills: any[] = [];
+
+
 
   getClass(currentIndex: number) : string {
     //console.log('I was called' + currentIndex );
@@ -88,11 +91,6 @@ export class HomeDashBoardComponent {
 
     console.log(JSON.stringify(dataService.biPartisanBills1));
 
-
-
-    dataService.legislatorsList
-    .subscribe(x => console.log(JSON.stringify(x)));
-
     dataService.legislatorsList
     .filter(x => x.party == 'Republican' && x.chamber.name == 'Senate')
     //.mergeAll()
@@ -108,6 +106,38 @@ export class HomeDashBoardComponent {
 
     dataService.legislatorsList.filter(x => x.party == 'Democratic' && x.chamber.name == 'House')
     .subscribe(senator => this.houseDemocratsList.push(senator));
+
+    dataService.getFollowedBills("Sheldon")
+    .map(res => res.json())
+    .subscribe (myBill => {
+
+        Rx.Observable.fromArray(myBill)
+        .subscribe(x => {
+
+
+          console.log(JSON.stringify(x));
+          this.followedBills.push(x);
+
+        })
+
+      });
+
+/*
+      var billFollow :  BillFollow = myBill;
+
+
+      console.log(billFollow);
+      dataService.billsList
+      .filter(x => x.billName == billFollow.billName)
+      .subscribe(x => {
+
+
+        //console.log(test);
+        console.log(JSON.stringify(x));
+
+      })
+*/
+
 
 
     dataService.billsList.filter(x => x.originChamber == 'house')

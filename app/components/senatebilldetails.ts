@@ -79,10 +79,21 @@ export class SenateBillDetailsComponent {
     console.log(JSON.stringify(inBill));
     console.log(this.inComment);
 
-    this.dataService.commentBill(inBill,"Riker", this.inComment)
+    this.dataService.commentBill(inBill,"Wes", this.inComment)
     .map(res => res.json())
     .subscribe( x => console.log('This is the result from the API' + JSON.stringify(x)));
 
+
+    this.comments = [];
+
+    this.dataService.getBillComments(inBill.billName)
+    .map( res => res.json())
+    .mergeAll()
+    .subscribe (x => {
+      console.log('These are the comments' + JSON.stringify(x));
+
+      this.comments.push(x);
+    });
 
 
   }

@@ -171,6 +171,20 @@ export class MyLocalIGADataService implements IMyIGADataService{
     //return this.http.get('dapi/bills.json');
   }
 
+  getFollowedBills (user: string) : Observable<Response> {
+    console.log('Getting getFollowedBills ' + user);
+    //this.republicanRepresentativeCount = 25;
+
+    var headers = new Headers();
+    headers.append('Accept', 'application/json');
+    //headers.append('Authorization', this.myToken);
+
+    //return this.http.get('dapi/legislators.json');
+    return this.http.get('http://localhost:8080/api/followedBills/' + user, { headers: headers})
+    //https://api.iga.in.gov//2016/bills?per_page=2000
+    //return this.http.get('dapi/bills.json');
+  }
+  
   getBillComments(billName: string) : Observable<Response>  {
 
     console.log('Getting Bill Comments for ' + billName);

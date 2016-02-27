@@ -103,6 +103,12 @@ System.register(['angular2/http', 'angular2/core', 'rxjs/subject/ReplaySubject',
                     headers.append('Authorization', this.myToken);
                     return this.http.get('https://api.iga.in.gov/2016/bills?per_page=2000', { headers: headers });
                 };
+                MyLocalIGADataService.prototype.getFollowedBills = function (user) {
+                    console.log('Getting getFollowedBills ' + user);
+                    var headers = new http_1.Headers();
+                    headers.append('Accept', 'application/json');
+                    return this.http.get('http://localhost:8080/api/followedBills/' + user, { headers: headers });
+                };
                 MyLocalIGADataService.prototype.getBillComments = function (billName) {
                     console.log('Getting Bill Comments for ' + billName);
                     var headers = new http_1.Headers();

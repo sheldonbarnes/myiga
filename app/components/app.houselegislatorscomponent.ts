@@ -4,7 +4,7 @@ import {MyIGADataService} from '../services/MyIGADataService';
 import {MyLocalIGADataService} from '../services/MyLocalIGADataService';
 import {IMyIGADataService} from '../models/IMyIGADataService';
 import {Legislator} from '../models/Legislator';
-
+import {Router, RouteParams, RouterLink, Location, ROUTER_DIRECTIVES} from 'angular2/router';
 import {LegislatureImage} from './app.legislatureimage';
 import {Observable} from 'rxjs/Observable';
 import  'rxjs/add/operator/map';
@@ -16,7 +16,7 @@ import  'rxjs/add/operator/map';
 
 @View({
 
-    directives : [LegislatureImage],
+    directives : [LegislatureImage, RouterLink, ROUTER_DIRECTIVES],
     templateUrl: 'reps.html'
 /*
     template:

@@ -22,8 +22,15 @@ export class BillComment {
   _id: string;
   billName: string;
   comment: string;
+  __v: number;
 }
 
+export class BillFollow {
+  _id: string;
+  user: string;
+  billName: string;
+  __v: number;
+}
 export class Bill {
 
   title: string;
