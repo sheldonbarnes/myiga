@@ -106,6 +106,7 @@
                                 </div>
                                     <br> <br>
                                     <div class="input-group col-md-6">
+                                      <input type="text" [(ngModel)]="inUser"> 
                                         <input id="btn-input" type="text" [(ngModel)]="inComment" class="form-control input-sm" placeholder="Type your message here..." />
                                         <span class="input-group-btn">
                                             <button class="btn btn-warning btn-sm" id="btn-chat" (click)="commentBill(thisBill)">

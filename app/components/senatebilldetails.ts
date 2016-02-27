@@ -35,7 +35,7 @@ export class SenateBillDetailsComponent {
   public thisBill : Bill = new Bill();
 
 
-  public inUser: string;
+  public inUser: string = "Sheldon";
   public inComment: string;
   public comments: any[] = [];
 
@@ -79,7 +79,7 @@ export class SenateBillDetailsComponent {
     console.log(JSON.stringify(inBill));
     console.log(this.inComment);
 
-    this.dataService.commentBill(inBill,"Wes", this.inComment)
+    this.dataService.commentBill(inBill, this.inUser, this.inComment)
     .map(res => res.json())
     .subscribe( x => console.log('This is the result from the API' + JSON.stringify(x)));
 
