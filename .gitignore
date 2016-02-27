@@ -5,3 +5,7 @@ app/services/MyToken.ts
 app/services/MyToken.js.map
 
 app/services/MyToken.js
+
+*.js
+
+*.map
