@@ -1,4 +1,6 @@
-System.register(['../../node_modules/rx/dist/rx.all.js', 'rxjs/add/operator/map', 'rxjs/add/operator/count', 'rxjs/add/operator/filter', 'rxjs/add/operator/next', 'rxjs/add/operator/observeOn', 'rxjs/add/observable/from', 'rxjs/add/observable/fromArray'], function(exports_1) {
+System.register(['../../node_modules/rx/dist/rx.all.js', 'rxjs/add/operator/map', 'rxjs/add/operator/count', 'rxjs/add/operator/filter', 'rxjs/add/operator/next', 'rxjs/add/operator/observeOn', 'rxjs/add/observable/from', 'rxjs/add/observable/fromArray'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     return {
         setters:[
             function (_1) {},

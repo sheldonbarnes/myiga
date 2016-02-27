@@ -1,4 +1,6 @@
-System.register(['angular2/core', '../services/MyIGADataService', '../services/MyLocalIGADataService', './app.legislatureimage', './chart.directive', './chart.donutchart', 'angular2/router', './app.senatelegislatorscomponent', './app.houselegislatorscomponent', './app.senatebillscomponent', './senatebilldetails', './app.homedashboardcomponent', './app.legislatorsdetailscomponent', 'rxjs/add/operator/count', 'rxjs/add/operator/filter', 'rxjs/add/operator/mergeAll', 'rxjs/add/operator/merge', 'rxjs/add/operator/take', 'rxjs/add/observable/from', 'rxjs/add/observable/fromArray', 'rxjs/add/operator/map', 'rxjs/add/operator/zipAll'], function(exports_1) {
+System.register(['angular2/core', '../services/MyIGADataService', '../services/MyLocalIGADataService', './app.legislatureimage', './chart.directive', './chart.donutchart', 'angular2/router', './app.senatelegislatorscomponent', './app.houselegislatorscomponent', './app.senatebillscomponent', './senatebilldetails', './app.homedashboardcomponent', './app.legislatorsdetailscomponent', 'rxjs/add/operator/count', 'rxjs/add/operator/filter', 'rxjs/add/operator/mergeAll', 'rxjs/add/operator/merge', 'rxjs/add/operator/take', 'rxjs/add/observable/from', 'rxjs/add/observable/fromArray', 'rxjs/add/operator/map', 'rxjs/add/operator/zipAll'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -117,12 +119,12 @@ System.register(['angular2/core', '../services/MyIGADataService', '../services/M
                         { path: '/SenateBills',
                             as: 'SenateBills',
                             component: app_senatebillscomponent_1.SenateBillsComponent },
-                        { path: '/SenateBillDetails/:id',
-                            as: 'SenateBillDetails',
-                            component: senatebilldetails_1.SenateBillDetailsComponent },
                         { path: '/LegislatorDetails/:id',
                             as: 'LegislatorDetails',
                             component: app_legislatorsdetailscomponent_1.LegislatorDetailsComponent },
+                        { path: '/SenateBillDetails/:id',
+                            as: 'SenateBillDetails',
+                            component: senatebilldetails_1.SenateBillDetailsComponent },
                         { path: '/Representatives',
                             as: 'CustomerDetails',
                             component: app_senatelegislatorscomponent_1.SenateLegislatorsComponent }
@@ -131,7 +133,7 @@ System.register(['angular2/core', '../services/MyIGADataService', '../services/M
                     __metadata('design:paramtypes', [MyIGADataService_1.MyIGADataService])
                 ], AppComponent);
                 return AppComponent;
-            })();
+            }());
             exports_1("AppComponent", AppComponent);
         }
     }

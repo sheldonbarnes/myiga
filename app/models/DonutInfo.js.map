@@ -1,1 +1,1 @@
-{"version":3,"file":"DonutInfo.js","sourceRoot":"","sources":["DonutInfo.ts"],"names":["DonutInfo","DonutInfo.constructor"],"mappings":";;;;;YAAA;gBACEA,mBAAoBA,KAAaA,EAAEA,KAAaA;oBAA5BC,UAAKA,GAALA,KAAKA,CAAQA;gBAAkBA,CAACA;gBACtDD,gBAACA;YAADA,CAACA,AAFD,IAEC;YAFD,iCAEC,CAAA"}
+{"version":3,"file":"DonutInfo.js","sourceRoot":"","sources":["DonutInfo.ts"],"names":[],"mappings":";;;;;;;YAAA;gBACE,mBAAoB,KAAa,EAAE,KAAa;oBAA5B,UAAK,GAAL,KAAK,CAAQ;gBAAkB,CAAC;gBACtD,gBAAC;YAAD,CAAC,AAFD,IAEC;YAFD,iCAEC,CAAA"}

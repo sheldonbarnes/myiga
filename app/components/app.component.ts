@@ -60,15 +60,26 @@ import {Observable} from 'rxjs/Observable';
     {path: '/SenateBills',
       as: 'SenateBills',
       component: SenateBillsComponent },
+<<<<<<< HEAD
+<<<<<<< HEAD
+    {path: '/LegislatorDetails/:id',
+      as: 'LegislatorDetails',
+      component: LegislatorDetailsComponent},
+=======
+>>>>>>> sheldonbarnes/master
 
       {path: '/SenateBillDetails/:id',
         as: 'SenateBillDetails',
         component: SenateBillDetailsComponent },
+<<<<<<< HEAD
+>>>>>>> sheldonbarnes/master
+=======
 
     {path: '/LegislatorDetails/:id',
       as: 'LegislatorDetails',
       component: LegislatorDetailsComponent},
 
+>>>>>>> sheldonbarnes/master
     {path: '/Representatives',
       as: 'CustomerDetails',
       component: SenateLegislatorsComponent }
