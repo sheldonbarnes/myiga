@@ -1,4 +1,5 @@
-System.register(['angular2/core', '../services/MyIGADataService', './app.legislatureimage', 'rxjs/add/operator/map'], function(exports_1) {
+System.register(['angular2/core', '../services/MyIGADataService', '../services/MyLocalIGADataService', './app.legislatureimage', 'rxjs/add/operator/map'], function(exports_1) {
+    "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -11,7 +12,7 @@ System.register(['angular2/core', '../services/MyIGADataService', './app.legisla
     var __param = (this && this.__param) || function (paramIndex, decorator) {
         return function (target, key) { decorator(target, key, paramIndex); }
     };
-    var core_1, MyIGADataService_1, app_legislatureimage_1;
+    var core_1, MyIGADataService_1, MyLocalIGADataService_1, app_legislatureimage_1;
     var SenateBillsComponent;
     return {
         setters:[
@@ -20,6 +21,9 @@ System.register(['angular2/core', '../services/MyIGADataService', './app.legisla
             },
             function (MyIGADataService_1_1) {
                 MyIGADataService_1 = MyIGADataService_1_1;
+            },
+            function (MyLocalIGADataService_1_1) {
+                MyLocalIGADataService_1 = MyLocalIGADataService_1_1;
             },
             function (app_legislatureimage_1_1) {
                 app_legislatureimage_1 = app_legislatureimage_1_1;
@@ -43,11 +47,11 @@ System.register(['angular2/core', '../services/MyIGADataService', './app.legisla
                         directives: [app_legislatureimage_1.LegislatureImage],
                         templateUrl: 'senatebills.html'
                     }),
-                    __param(0, core_1.Inject(MyIGADataService_1.MyIGADataService)), 
+                    __param(0, core_1.Inject(MyLocalIGADataService_1.MyLocalIGADataService)), 
                     __metadata('design:paramtypes', [MyIGADataService_1.MyIGADataService])
                 ], SenateBillsComponent);
                 return SenateBillsComponent;
-            })();
+            }());
             exports_1("SenateBillsComponent", SenateBillsComponent);
         }
     }

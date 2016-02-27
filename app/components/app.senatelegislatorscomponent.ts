@@ -1,6 +1,7 @@
 import {Component, View, Inject, Input} from 'angular2/core';
 import {CORE_DIRECTIVES} from 'angular2/angular2';
 import {MyIGADataService} from '../services/MyIGADataService';
+import {MyLocalIGADataService} from '../services/MyLocalIGADataService';
 import {Legislator} from '../models/Legislator';
 
 import {LegislatureImage} from './app.legislatureimage';
@@ -57,21 +58,23 @@ export class SenateLegislatorsComponent {
 
   public senateLegislators1 : Legislator[] = [];
   public senateDemocrats : Legislator[] = [];
-  constructor(@Inject(MyIGADataService) public dataService: MyIGADataService) {
+  constructor(@Inject(MyLocalIGADataService) public dataService: MyIGADataService) {
     //console.log(this.chambername);
 
     console.log('This is the beginning of the constructor for SenateLegislatorsComponent ');
 
 
     dataService.legislators
+    .mergeAll()
     .filter(leg => leg.party == "Democratic" && leg.chamber.name == "Senate")
     .subscribe(x=> this.senateDemocrats.push(x));
 
     dataService.legislators
+    .mergeAll()
     .filter(leg => leg.party == "Republican" && leg.chamber.name == "Senate")
     .subscribe(x=>
       {
-        //console.log('Pushing')
+        console.log('Pushing from the SenateLegislatorsComponent');
         this.senateLegislators1.push(x);
         //console.log(this.senateLegislators1.length);
       },

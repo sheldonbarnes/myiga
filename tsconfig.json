@@ -37,6 +37,7 @@
         "app/models/IMyIGADataService.ts",
         "app/models/Legislator.ts",
         "app/services/MyIGADataService.ts",
+        "app/services/MyLocalIGADataService.ts",
         "app/services/MyToken.ts",
         "typings/angular2/angular2-2.0.0-alpha.39.d.ts",
         "typings/angular2/http-2.0.0-alpha.39.d.ts",

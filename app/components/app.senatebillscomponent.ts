@@ -1,6 +1,7 @@
 import {Component, View, Inject, Input} from 'angular2/core';
 import {CORE_DIRECTIVES} from 'angular2/angular2';
 import {MyIGADataService} from '../services/MyIGADataService';
+import {MyLocalIGADataService} from '../services/MyLocalIGADataService';
 import {Legislator} from '../models/Legislator';
 import {Bill, IBill} from '../models/Bill';
 
@@ -24,7 +25,7 @@ export class SenateBillsComponent {
 
   public senateLegislators1 : Legislator[] = [];
   public senateBills : Bill[] = [];
-  constructor(@Inject(MyIGADataService) public dataService: MyIGADataService) {
+  constructor(@Inject(MyLocalIGADataService) public dataService: MyIGADataService) {
 
 /*uncomment to refresh data
     dataService.billsList

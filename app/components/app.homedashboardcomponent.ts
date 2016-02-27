@@ -1,6 +1,7 @@
 import {Component, View, Inject, Directive, ElementRef, Renderer} from 'angular2/core';
 import {CORE_DIRECTIVES} from 'angular2/angular2';
 import {MyIGADataService} from '../services/MyIGADataService';
+import {MyLocalIGADataService} from '../services/MyLocalIGADataService';
 import {Legislator} from '../models/Legislator';
 import {Bill} from '../models/Bill';
 import {IBill} from '../models/Bill';
@@ -75,7 +76,7 @@ export class HomeDashBoardComponent {
       return "timeline-inverted";
     }
   }
-  constructor(@Inject(MyIGADataService) public dataService: MyIGADataService) {
+  constructor(@Inject(MyLocalIGADataService) public dataService: MyIGADataService) {
     console.log('I am in the home dashboard controller');
 
     this.mylegislators = dataService.representatives;
@@ -86,36 +87,34 @@ export class HomeDashBoardComponent {
 
     console.log(JSON.stringify(dataService.biPartisanBills1));
 
-    dataService.legislatorsList.filter(x => x.party == 'Republican' && x.position_title == 'Senator')
+
+
+    dataService.legislatorsList
+    .subscribe(x => console.log(JSON.stringify(x)));
+
+    dataService.legislatorsList
+    .filter(x => x.party == 'Republican' && x.chamber.name == 'Senate')
+    //.mergeAll()
     .subscribe(senator => this.senateRepublicansList.push(senator));
 
-    dataService.legislatorsList.filter(x => x.party == 'Democratic' && x.position_title == 'Senator')
+    dataService.legislatorsList.filter(x => x.party == 'Democratic' && x.chamber.name == 'Senate')
+    //.mergeAll()
     .subscribe(senator => this.senateDemocratsList.push(senator));
 
-    dataService.legislatorsList.filter(x => x.party == 'Republican' && x.position_title == 'Representative')
+    dataService.legislatorsList.filter(x => x.party == 'Republican' && x.chamber.name == 'House')
     .subscribe(senator => this.houseRepublicansList.push(senator));
 
 
-    dataService.legislatorsList.filter(x => x.party == 'Democratic' && x.position_title == 'Representative')
+    dataService.legislatorsList.filter(x => x.party == 'Democratic' && x.chamber.name == 'House')
     .subscribe(senator => this.houseDemocratsList.push(senator));
 
 
-    dataService.billsList.filter(x => x.originChamber.name == 'House')
+    dataService.billsList.filter(x => x.originChamber == 'house')
     .subscribe(bill => this.houseBillsList.push(bill));
 
-    dataService.billsList.filter(x => x.originChamber.name == 'Senate')
+    dataService.billsList.filter(x => x.originChamber == 'senate')
     .subscribe(bill => this.senateBillsList.push(bill));
 
-  /*
-
-    dataService.billsList.filter(x => x.originalChamber.name == 'Senate')
-    .subscribe(bill => this.senateBills.push(bill));*/
-    /*
-    this.dataService.legislators
-
-    .subscribe(x => {
-        //console.log(x);
-    });*/
 
   }
 

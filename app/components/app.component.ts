@@ -1,6 +1,7 @@
 import {Component, View, Inject, Directive, ElementRef, Renderer} from 'angular2/core';
 import {CORE_DIRECTIVES} from 'angular2/angular2';
 import {MyIGADataService} from '../services/MyIGADataService';
+import {MyLocalIGADataService} from '../services/MyLocalIGADataService';
 import {Legislator} from '../models/Legislator';
 import {Bill} from '../models/Bill';
 import {IBill} from '../models/Bill';
@@ -85,7 +86,7 @@ export class AppComponent {
       return "timeline-inverted";
     }
   }
-  constructor(@Inject(MyIGADataService) public dataService: MyIGADataService) {
+  constructor(@Inject(MyLocalIGADataService) public dataService: MyIGADataService) {
 
     console.log('This is the home controller');
 
