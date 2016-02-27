@@ -61,14 +61,24 @@ import {Observable} from 'rxjs/Observable';
       as: 'SenateBills',
       component: SenateBillsComponent },
 <<<<<<< HEAD
+<<<<<<< HEAD
+    {path: '/LegislatorDetails/:id',
+      as: 'LegislatorDetails',
+      component: LegislatorDetailsComponent},
+=======
+>>>>>>> sheldonbarnes/master
+
+      {path: '/SenateBillDetails/:id',
+        as: 'SenateBillDetails',
+        component: SenateBillDetailsComponent },
+<<<<<<< HEAD
+>>>>>>> sheldonbarnes/master
+=======
+
     {path: '/LegislatorDetails/:id',
       as: 'LegislatorDetails',
       component: LegislatorDetailsComponent},
 
-=======
-      {path: '/SenateBillDetails/:id',
-        as: 'SenateBillDetails',
-        component: SenateBillDetailsComponent },
 >>>>>>> sheldonbarnes/master
     {path: '/Representatives',
       as: 'CustomerDetails',

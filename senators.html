@@ -23,6 +23,10 @@
                               <div class="row show-grid" *ngIf="senateLegislators1.length>=40">
                                   <div class="col-md-2" *ngFor="#legislator of senateLegislators1">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> sheldonbarnes/master
                                   <a [routerLink]="['/LegislatorDetails', {id: legislator._id}]">
                                     <center>
                                       <legimg [link]="legislator.pngDownloadLink"></legimg> <br>
@@ -31,6 +35,7 @@
                                       <button class="btn btn-primary">Follow Senator</button>
                                     </center>
                                   </a>
+<<<<<<< HEAD
 =======
                                   <center>
                                   <legimg [link]="legislator.pngDownloadLink"></legimg> <br>
@@ -38,6 +43,9 @@
                                   <!-- {{legislator.party}} --> <br>
                                   <button class="btn btn-primary" (click)="followLegislator(legislator)">Follow Senator</button>
                                 </center>
+>>>>>>> sheldonbarnes/master
+=======
+
 >>>>>>> sheldonbarnes/master
                                   </div>
 
@@ -47,6 +55,10 @@
                               <div class="row show-grid"  *ngIf="senateDemocrats.length>=9">
                                   <div class="col-md-2" *ngFor="#dems of senateDemocrats">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> sheldonbarnes/master
                                     <a [routerLink]="['/LegislatorDetails', {id: dems._id}]">
                                       <center>
                                         <legimg [link]="dems.pngDownloadLink"></legimg> <br>
@@ -56,6 +68,7 @@
                                         <button class="btn btn-primary">Follow Senator</button>
                                       </center>
                                     </a>
+<<<<<<< HEAD
 =======
                                   <center>
                                   <legimg [link]="dems.pngDownloadLink"></legimg> <br>
@@ -64,6 +77,9 @@
                                   <br>
                                   <button class="btn btn-primary" (click)="followLegislator(dems)">Follow Senator</button>
                                 </center>
+>>>>>>> sheldonbarnes/master
+=======
+
 >>>>>>> sheldonbarnes/master
                                   </div>
 

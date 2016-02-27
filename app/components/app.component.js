@@ -122,6 +122,9 @@ System.register(['angular2/core', '../services/MyIGADataService', '../services/M
                         { path: '/LegislatorDetails/:id',
                             as: 'LegislatorDetails',
                             component: app_legislatorsdetailscomponent_1.LegislatorDetailsComponent },
+                        { path: '/SenateBillDetails/:id',
+                            as: 'SenateBillDetails',
+                            component: senatebilldetails_1.SenateBillDetailsComponent },
                         { path: '/Representatives',
                             as: 'CustomerDetails',
                             component: app_senatelegislatorscomponent_1.SenateLegislatorsComponent }
