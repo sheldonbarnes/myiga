@@ -12,14 +12,7 @@ export class ILegislator {
 
 export class Legislator {
   _id: string;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
   isFollowed: boolean;
->>>>>>> sheldonbarnes/master
-=======
-  isFollowed: boolean;
->>>>>>> sheldonbarnes/master
   position_title: string;
   firstName: string;
   lastName: string;
