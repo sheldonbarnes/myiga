@@ -1,5 +1,4 @@
 System.register(['../../node_modules/rx/dist/rx.all.js', 'rxjs/add/operator/map', 'rxjs/add/operator/count', 'rxjs/add/operator/filter', 'rxjs/add/operator/next', 'rxjs/add/operator/observeOn', 'rxjs/add/observable/from', 'rxjs/add/observable/fromArray'], function(exports_1) {
-    "use strict";
     return {
         setters:[
             function (_1) {},

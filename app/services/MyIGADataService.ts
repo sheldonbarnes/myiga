@@ -56,6 +56,14 @@ export class MyIGADataService implements IMyIGADataService{
   public bills1: Bill[] = [];
 
   //public bills: Bill[] = [];
+
+    followLegislator(inLeg : Legislator)  {
+
+    }
+
+        followBill(inUser: string, inbillName: string){
+          
+        }
   constructor (public http: Http) {
 /*
     this.bills

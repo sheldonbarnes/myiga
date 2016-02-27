@@ -1,5 +1,4 @@
 System.register(['angular2/core', '../services/MyLocalIGADataService', './app.legislatureimage', 'rxjs/add/operator/map'], function(exports_1) {
-    "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -53,6 +52,15 @@ System.register(['angular2/core', '../services/MyLocalIGADataService', './app.le
                     });
                     console.log(dataService.senators.length + ' is the length');
                 }
+                SenateLegislatorsComponent.prototype.followLegislator = function (inLeg) {
+                    console.log('FOLLOWING ' + JSON.stringify(inLeg));
+                    this.dataService.followLegislator(inLeg)
+                        .map(function (res) { return res.json(); })
+                        .subscribe(function (x) {
+                        inLeg.isFollowed = true;
+                        console.log(JSON.stringify('asdasd ' + inLeg));
+                    });
+                };
                 SenateLegislatorsComponent.prototype.ngOnInit = function () {
                     console.log(this.dataService.senators.length + ' is the length');
                 };
@@ -76,7 +84,7 @@ System.register(['angular2/core', '../services/MyLocalIGADataService', './app.le
                     __metadata('design:paramtypes', [Object])
                 ], SenateLegislatorsComponent);
                 return SenateLegislatorsComponent;
-            }());
+            })();
             exports_1("SenateLegislatorsComponent", SenateLegislatorsComponent);
         }
     }

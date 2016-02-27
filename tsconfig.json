@@ -33,6 +33,7 @@
         "app/components/app.senatelegislatorscomponent.ts",
         "app/components/chart.directive.ts",
         "app/components/chart.donutchart.ts",
+        "app/components/senatebilldetails.ts",
         "app/models/Bill.ts",
         "app/models/Chamber.ts",
         "app/models/DonutInfo.ts",

@@ -1,0 +1,131 @@
+
+<div id="page-wrapper">
+  <div class="row">
+      <div class="col-lg-12">
+          <h1 class="page-header">Senate Bill Details</h1>
+      </div>
+      <!-- /.col-lg-12 -->
+  </div>
+  <!-- /.row -->
+
+
+
+              <div class="row">
+                  <div class="col-lg-12">
+                      <div class="panel panel-default">
+                        <h3>{{thisBill.billName}} ({{thisBill.committeeStatus}}) <i class="fa fa-bookmark-o fa-1x" (click)="followBill(thisBill.billName)"></i>
+                          <i class="fa fa-thumbs-o-up fa-1x"></i>
+                          <i class="fa fa-thumbs-o-down  fa-1x"></i>
+                        </h3>
+
+
+                        <p>
+                          {{thisBill.title}}
+
+
+                          </p>
+
+
+                          <div class="panel-body">
+
+                              <div class="row show-grid" >
+                                  <div class="col-md-12">
+                                    <!-- <a [routerLink]="['/SenateBillDetails', {id: bill.billName}]">{{bill.billName}}</a>-->
+
+                                    <!-- <a [routerLink]="['/SenateBillDetails'] ,{id:bill._id}">{bill.billName}}</a> -->
+                                    <h3>Authors and Coauthors</h3> <br>
+                                        <legimg1 *ngFor="#author of thisBill.authors" [link]="author.link"></legimg1>
+                                        |
+                                        <legimg1 *ngFor="#author of thisBill.coauthors" [link]="author.link"></legimg1>
+
+
+                                  <h3>Sponsors and CoSponsors</h3> <br>
+                                       <legimg1 *ngFor="#author of thisBill.sponsors" [link]="author.link"></legimg1>
+                                        |
+                                       <legimg1 *ngFor="#author of thisBill.cosponsors" [link]="author.link"></legimg1>
+                                       <br>
+
+
+
+                                        <br>
+                                  <h3>Digest</h3> <br>
+                                  {{thisBill.latestVersion.digest}}
+
+
+                                  <br>
+                            <h3>Motions</h3> <br>
+
+
+                            <div  *ngFor="#motion of thisBill.motions">
+                                <p> </p>
+
+                                <div  *ngFor="#rollcall of motion.rollcalls">
+                                  <h4>{{motion.type}} NOTE</h4>
+                                  <p class="fa fa-check"> {{rollcall.results.yea}} </p>
+                                  <p class="fa fa-remove"> {{rollcall.results.nay}}</p>
+                                </div>
+
+                            </div>
+
+
+
+<!--
+                                  <div *ngIf = "bill.authors" *ngFor="#author of bill.authors">
+
+
+                                    <div *ngIf="author" style="float:left">
+                                      <legimg1  [link]="author.link"></legimg1>
+                                      </div>
+                                  </div> -->
+                                  <br><br>
+
+
+
+                                <div *ngFor="#comment of comments" class="row" style="padding:10px">
+
+
+                                  <div style="float:left">
+
+                                    <img *ngIf="comment.user == 'Sheldon'"src="https://s-media-cache-ak0.pinimg.com/236x/10/40/d0/1040d05b55c5ca50dd154a3d434d6717.jpg" height="50" widht="50" style="border-radius:60%">
+                                    <img *ngIf="comment.user == 'Captain Sisko'"src="https://s-media-cache-ak0.pinimg.com/236x/10/40/d0/1040d05b55c5ca50dd154a3d434d6717.jpg" height="50" widht="50" style="border-radius:60%">
+                                    <img *ngIf="comment.user == 'Spock'"src="http://www.startrek.com/legacy_media/images/200307/spock01/320x240.jpg" height="50" widht="50" style="border-radius:60%">
+                                    <img *ngIf="comment.user == 'Riker'"src="http://images.g4tv.com/ImageDb3/45872_L/commander-william-t-riker-star-trek-the-next-generation.jpg" height="50" widht="50" style="border-radius:60%">
+
+
+                                  </div>
+
+                                  <div style="float:left; padding-left:20px">
+
+                                    <a href="#">{{comment.user}}</a> {{comment.comment}} <br>
+                                    <a href="#">Like</a> · <a href="#">Reply</a>
+
+                                  </div>
+                                </div>
+                                    <br> <br>
+                                    <div class="input-group col-md-6">
+                                        <input id="btn-input" type="text" [(ngModel)]="inComment" class="form-control input-sm" placeholder="Type your message here..." />
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-warning btn-sm" id="btn-chat" (click)="commentBill(thisBill)">
+                                                Comment
+                                            </button>
+                                        </span>
+                                    </div>
+
+
+                                  </div>
+
+                              </div>
+
+                            </div>
+                      </div>
+                  </div>
+                  <!-- /.col-lg-12 -->
+              </div>
+
+
+
+  <!-- /.row -->
+
+
+</div>
+<!-- /#page-wrapper -->

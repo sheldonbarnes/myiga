@@ -1,5 +1,4 @@
 System.register(['angular2/core', '../services/MyLocalIGADataService', './app.legislatureimage', './chart.directive', './chart.donutchart', 'angular2/router', './app.senatelegislatorscomponent', 'rxjs/add/operator/count', 'rxjs/add/operator/filter', 'rxjs/add/operator/mergeAll', 'rxjs/add/operator/merge', 'rxjs/add/operator/take', 'rxjs/add/observable/from', 'rxjs/add/observable/fromArray', 'rxjs/add/operator/map', 'rxjs/add/operator/zipAll'], function(exports_1) {
-    "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -109,7 +108,7 @@ System.register(['angular2/core', '../services/MyLocalIGADataService', './app.le
                     __metadata('design:paramtypes', [Object])
                 ], HomeDashBoardComponent);
                 return HomeDashBoardComponent;
-            }());
+            })();
             exports_1("HomeDashBoardComponent", HomeDashBoardComponent);
         }
     }

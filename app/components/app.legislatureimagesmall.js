@@ -1,5 +1,4 @@
 System.register(['angular2/core', '../services/MyIGADataService', 'rxjs/add/operator/map'], function(exports_1) {
-    "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -26,6 +25,7 @@ System.register(['angular2/core', '../services/MyIGADataService', 'rxjs/add/oper
                     this.dataService = dataService;
                 }
                 LegislatureImageSmall.prototype.ngOnInit = function () {
+                    console.log('I am in the leg image 1' + JSON.stringify(this.link));
                     this.link = this.link.replace("/2016/legislators/", "legislator_");
                     this.link = this.link.replace("?format=png", "");
                 };
@@ -43,7 +43,7 @@ System.register(['angular2/core', '../services/MyIGADataService', 'rxjs/add/oper
                     __metadata('design:paramtypes', [MyIGADataService_1.MyIGADataService])
                 ], LegislatureImageSmall);
                 return LegislatureImageSmall;
-            }());
+            })();
             exports_1("LegislatureImageSmall", LegislatureImageSmall);
         }
     }

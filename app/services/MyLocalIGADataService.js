@@ -1,5 +1,4 @@
 System.register(['angular2/http', 'angular2/core', 'rxjs/subject/ReplaySubject', './MyToken', '../../node_modules/rx/dist/rx.all.js'], function(exports_1) {
-    "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -104,11 +103,25 @@ System.register(['angular2/http', 'angular2/core', 'rxjs/subject/ReplaySubject',
                     headers.append('Authorization', this.myToken);
                     return this.http.get('https://api.iga.in.gov/2016/bills?per_page=2000', { headers: headers });
                 };
+                MyLocalIGADataService.prototype.getBillComments = function (billName) {
+                    console.log('Getting Bill Comments for ' + billName);
+                    var headers = new http_1.Headers();
+                    headers.append('Accept', 'application/json');
+                    return this.http.get('http://localhost:8080/api/billComments/' + billName, { headers: headers });
+                };
                 MyLocalIGADataService.prototype.getBillsLocal = function () {
                     console.log('Getting Bills');
                     var headers = new http_1.Headers();
                     headers.append('Accept', 'application/json');
                     return this.http.get('http://localhost:8080/api/bills', { headers: headers });
+                };
+                MyLocalIGADataService.prototype.followBill = function (inUser, inbillName) {
+                    console.log('Posting Bills' + JSON.stringify(inbillName));
+                    var stuff = { user: inUser, billName: inbillName };
+                    console.log('Thie stuff ' + stuff);
+                    var headers1 = new http_1.Headers();
+                    headers1.append('Content-Type', 'application/json');
+                    return this.http.post('http://localhost:8080/api/followBill', JSON.stringify(stuff), { headers: headers1 });
                 };
                 MyLocalIGADataService.prototype.postBill = function (inBill) {
                     console.log('Posting Bills' + JSON.stringify(inBill));
@@ -139,6 +152,21 @@ System.register(['angular2/http', 'angular2/core', 'rxjs/subject/ReplaySubject',
                     return this.http.get(legLink, { headers: headers })
                         .map(function (res) { return res.json(); });
                 };
+                MyLocalIGADataService.prototype.followLegislator = function (inLeg) {
+                    console.log('making the call');
+                    var stuff = { user: "Sheldon", legislatorID: inLeg._id };
+                    console.log('Thie stuff ' + JSON.stringify(stuff));
+                    var headers1 = new http_1.Headers();
+                    headers1.append('Content-Type', 'application/json');
+                    return this.http.post('http://localhost:8080/api/followLegislator', JSON.stringify(stuff), { headers: headers1 });
+                };
+                MyLocalIGADataService.prototype.commentBill = function (inBill, inUser, inComment) {
+                    var stuff = { user: inUser, billName: inBill.billName, comment: inComment };
+                    console.log('Thie stuff ' + JSON.stringify(stuff));
+                    var headers1 = new http_1.Headers();
+                    headers1.append('Content-Type', 'application/json');
+                    return this.http.post('http://localhost:8080/api/billComment', JSON.stringify(stuff), { headers: headers1 });
+                };
                 MyLocalIGADataService.prototype.getLegislatorImage = function (link) {
                     var headers = new http_1.Headers();
                     headers.append('Accept', 'image/png');
@@ -152,7 +180,7 @@ System.register(['angular2/http', 'angular2/core', 'rxjs/subject/ReplaySubject',
                     __metadata('design:paramtypes', [http_1.Http])
                 ], MyLocalIGADataService);
                 return MyLocalIGADataService;
-            }());
+            })();
             exports_1("MyLocalIGADataService", MyLocalIGADataService);
         }
     }

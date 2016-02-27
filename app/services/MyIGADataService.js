@@ -1,5 +1,4 @@
 System.register(['angular2/http', 'angular2/core', 'rxjs/Observable', 'rxjs/subject/ReplaySubject', './MyToken', '../../node_modules/rx/dist/rx.all.js', 'rxjs/add/operator/map', 'rxjs/add/operator/count', 'rxjs/add/operator/filter', 'rxjs/add/operator/observeOn', 'rxjs/add/observable/from', 'rxjs/add/observable/fromArray'], function(exports_1) {
-    "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -66,6 +65,10 @@ System.register(['angular2/http', 'angular2/core', 'rxjs/Observable', 'rxjs/subj
                     this.legislators.filter(function (x) { return x.chamber.name == 'Senate'; })
                         .subscribe(function (x) { return _this.senators.push(x); });
                 }
+                MyIGADataService.prototype.followLegislator = function (inLeg) {
+                };
+                MyIGADataService.prototype.followBill = function (inUser, inbillName) {
+                };
                 MyIGADataService.prototype.getSessions = function () { };
                 MyIGADataService.prototype.getConstitution = function () { };
                 MyIGADataService.prototype.getChambers = function () {
@@ -149,7 +152,7 @@ System.register(['angular2/http', 'angular2/core', 'rxjs/Observable', 'rxjs/subj
                     __metadata('design:paramtypes', [http_1.Http])
                 ], MyIGADataService);
                 return MyIGADataService;
-            }());
+            })();
             exports_1("MyIGADataService", MyIGADataService);
         }
     }
