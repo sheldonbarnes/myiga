@@ -7,10 +7,11 @@ export class ILegislator {
   lastName: string;
   party: string;
   link: string;
-  fullname: string;  
+  fullname: string;
 }
 
 export class Legislator {
+  _id: string;
   position_title: string;
   firstName: string;
   lastName: string;

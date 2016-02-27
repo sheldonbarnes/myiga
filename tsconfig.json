@@ -27,6 +27,7 @@
         "app/components/app.component.ts",
         "app/components/app.homedashboardcomponent.ts",
         "app/components/app.houselegislatorscomponent.ts",
+        "app/components/app.legislatorsdetailscomponent.ts",
         "app/components/app.legislatureimage.ts",
         "app/components/app.legislatureimagesmall.ts",
         "app/components/app.senatebillscomponent.ts",

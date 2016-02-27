@@ -1,4 +1,6 @@
-System.register([], function(exports_1) {
+System.register([], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var ILegislator, Legislator;
     return {
         setters:[],
@@ -7,13 +9,13 @@ System.register([], function(exports_1) {
                 function ILegislator() {
                 }
                 return ILegislator;
-            })();
+            }());
             exports_1("ILegislator", ILegislator);
             Legislator = (function () {
                 function Legislator() {
                 }
                 return Legislator;
-            })();
+            }());
             exports_1("Legislator", Legislator);
         }
     }

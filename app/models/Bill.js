@@ -1,4 +1,6 @@
-System.register(['./Chamber', '../../node_modules/rx/dist/rx.all.js'], function(exports_1) {
+System.register(['./Chamber', '../../node_modules/rx/dist/rx.all.js'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var Chamber_1;
     var IBill, Bill, CountInfo, StaticBill;
     return {
@@ -13,7 +15,7 @@ System.register(['./Chamber', '../../node_modules/rx/dist/rx.all.js'], function(
                     this.originChamber = new Chamber_1.Chamber();
                 }
                 return IBill;
-            })();
+            }());
             exports_1("IBill", IBill);
             Bill = (function () {
                 function Bill() {
@@ -25,7 +27,7 @@ System.register(['./Chamber', '../../node_modules/rx/dist/rx.all.js'], function(
                     this.motions = [];
                 }
                 return Bill;
-            })();
+            }());
             exports_1("Bill", Bill);
             CountInfo = (function () {
                 function CountInfo() {
@@ -37,7 +39,7 @@ System.register(['./Chamber', '../../node_modules/rx/dist/rx.all.js'], function(
                     return this.DemocraticAuthors + this.DemocraticCoAuthors + this.DemocraticSponsors + this.DemocraticCoSponsors + this.DemocraticAdvisors;
                 };
                 return CountInfo;
-            })();
+            }());
             exports_1("CountInfo", CountInfo);
             StaticBill = (function () {
                 function StaticBill() {
@@ -95,7 +97,7 @@ System.register(['./Chamber', '../../node_modules/rx/dist/rx.all.js'], function(
                     return countToReturn;
                 };
                 return StaticBill;
-            })();
+            }());
             exports_1("StaticBill", StaticBill);
         }
     }
